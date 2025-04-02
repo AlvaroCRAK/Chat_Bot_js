@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot Universitario</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .chat-container {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      height: 400px;
+      overflow-y: auto;
+    }
+    .message {
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      border-radius: 18px;
+      max-width: 70%;
+      word-wrap: break-word;
+    }
+    .user-message {
+      background-color: #e3f2fd;
+      margin-left: auto;
+      border-bottom-right-radius: 5px;
+    }
+    .bot-message {
+      background-color: #f1f1f1;
+      margin-right: auto;
+      border-bottom-left-radius: 5px;
+    }
+    .input-container {
+      display: flex;
+      gap: 10px;
+    }
+    #user-input {
+      flex-grow: 1;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px 20px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #1a252f;
+    }
+    .help-text {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e8f5e9;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .typing-indicator {
+      display: none;
+      color: #7f8c8d;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+    .example-question {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      background-color: #e3f2fd;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s;
+    }
+    .example-question:hover {
+      background-color: #bbdefb;
+    }
+    .examples-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      justify-content: center;
+    }
+    .course-list {
+      margin-top: 10px;
+      padding: 8px;
+      background-color: #e8f5e9;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .requirements {
+      color: #c62828;
+      font-weight: bold;
+    }
+    .success {
+      color: #2e7d32;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Chatbot Universitario Inteligente</h1>
+  
+  <div class="chat-container" id="chat-container">
+    <div class="typing-indicator" id="typing-indicator">Chatbot está escribiendo...</div>
+  </div>
+  
+  <div class="input-container">
+    <input type="text" id="user-input" placeholder="Escribe tu pregunta..." autofocus>
+    <button id="send-button">Enviar</button>
+  </div>
+  
+  <div class="help-text">
+    <p><strong>Ejemplos de preguntas:</strong></p>
+    <div class="examples-container">
+      <span class="example-question" onclick="insertExample('¿Puedo tomar Inteligencia Artificial?')">¿Puedo tomar Inteligencia Artificial?</span>
+      <span class="example-question" onclick="insertExample('Aprobé Programación I')">Aprobé Programación I</span>
+      <span class="example-question" onclick="insertExample('¿Qué cursos aprobé?')">¿Qué cursos aprobé?</span>
+      <span class="example-question" onclick="insertExample('¿Cuál es el horario de Bases de Datos?')">¿Cuál es el horario de Bases de Datos?</span>
+    </div>
+  </div>
+
+<script>
+  // Base de conocimientos
+  const knowledgeBase = {
+    cursos: {
+      'Ingeniería de Software': {
+        requisito: 'Programación I',
+        creditos: 4,
+        horario: 'Lunes y Miércoles 10:00-12:00',
+        departamento: 'Computación'
+      },
+      'Programación I': {
+        requisito: null,
+        creditos: 3,
+        horario: 'Martes y Jueves 14:00-16:00',
+        departamento: 'Computación'
+      },
+      'Bases de Datos': {
+        requisito: 'Programación I',
+        creditos: 4,
+        horario: 'Viernes 8:00-12:00',
+        departamento: 'Computación'
+      },
+      'Inteligencia Artificial': {
+        requisito: 'Matemáticas Discretas AND Programación I',
+        creditos: 5,
+        horario: 'Lunes 16:00-19:00',
+        departamento: 'Computación'
+      },
+      'Matemáticas Discretas': {
+        requisito: null,
+        creditos: 4,
+        horario: 'Miércoles 16:00-19:00',
+        departamento: 'Matemáticas'
+      }
+    },
+    puedeTomar: function(curso, aprobados) {
+      let req = this.cursos[curso].requisito;
+      if (!req) return { puede: true, faltan: [] };
+      let reqs = req.split('AND').map(r => r.trim());
+      let faltan = reqs.filter(r => !aprobados.includes(r));
+      return { puede: faltan.length === 0, faltan: faltan };
+    }
+  };
+
+  function evalLogic(exp, aprobados) {
+    if (/\sY\s/i.test(exp)) {
+      return { error: 'Usa AND u OR en lugar de Y.' };
+    }
+    exp = exp.replace(/^(evalúa|verifica)/i, "").trim();
+    let partsOr = exp.split(/\s+OR\s+/i), overall = false;
+    for (let part of partsOr) {
+      let partsAnd = part.split(/\s+AND\s+/i), resAnd = true;
+      for (let token of partsAnd) {
+        token = token.trim();
+        let neg = false;
+        if (token.startsWith("not ")) {
+          neg = true;
+          token = token.replace("not ", "").trim();
+        }
+        if (!knowledgeBase.cursos[token]) {
+          return { error: 'Curso no existe: ' + token };
+        }
+        let approved = aprobados.includes(token);
+        if (neg) approved = !approved;
+        resAnd = resAnd && approved;
+      }
+      overall = overall || resAnd;
+    }
+    return { result: overall };
+  }
+
+  // Chatbot
+  class Chatbot {
+    constructor() {
+      this.aprobados = [];
+    }
+    
+    buscarCurso(txt) {
+      txt = txt.toLowerCase();
+      for (let curso in knowledgeBase.cursos) {
+        if (txt.includes(curso.toLowerCase())) return curso;
+      }
+      return null;
+    }
+    
+    procesa(pregunta) {
+      pregunta = pregunta.trim().toLowerCase();
+      
+      if (pregunta.startsWith("si aprobé") && pregunta.includes(",")) {
+        let partes = pregunta.split(",");
+        let reg = partes[0];
+        let cursoReg = this.buscarCurso(reg);
+        if (cursoReg && !this.aprobados.includes(cursoReg)) this.aprobados.push(cursoReg);
+        return this.procesa(partes.slice(1).join(","));
+      }
+      
+      if (
+        pregunta.startsWith("aprobé") ||
+        pregunta.startsWith("he aprobado") ||
+        pregunta.startsWith("registra") ||
+        pregunta.startsWith("ya terminé")
+      ) {
+        let curso = this.buscarCurso(pregunta);
+        if (!curso) return "Curso no reconocido.";
+        if (!this.aprobados.includes(curso)) {
+          this.aprobados.push(curso);
+          return "Registrado: " + curso;
+        }
+        return "Ya registrado: " + curso;
+      }
+      
+      if (pregunta.includes("qué cursos aprobé") || pregunta.includes("mis cursos")) {
+        return this.aprobados.length ? "Aprobados: " + this.aprobados.join(", ") : "No has aprobado ningún curso.";
+      }
+      
+      if (
+        pregunta.includes("puedo tomar") ||
+        pregunta.includes("qué necesito") ||
+        pregunta.includes("cuáles son los requisitos")
+      ) {
+        let curso = this.buscarCurso(pregunta);
+        if (!curso) return "Curso no encontrado.";
+        let evalRes = knowledgeBase.puedeTomar(curso, this.aprobados);
+        return evalRes.puede
+          ? "Puedes tomar " + curso
+          : "No puedes tomar " + curso + ". Faltan: " + evalRes.faltas.join(" y ");
+      }
+      
+      if (pregunta.includes("horario") || pregunta.includes("cuándo")) {
+        let curso = this.buscarCurso(pregunta);
+        return curso
+          ? "Horario de " + curso + ": " + knowledgeBase.cursos[curso].horario
+          : "Curso no encontrado.";
+      }
+      
+      if (pregunta.includes("créditos") || pregunta.includes("creditos")) {
+        let curso = this.buscarCurso(pregunta);
+        return curso
+          ? curso + " vale " + knowledgeBase.cursos[curso].creditos + " créditos."
+          : "Curso no encontrado.";
+      }
+      
+      if (pregunta.startsWith("evalúa") || pregunta.startsWith("verifica")) {
+        let res = evalLogic(pregunta, this.aprobados);
+        return res.error ? res.error : "La expresión es " + (res.result ? "verdadera" : "falsa");
+      }
+      
+      if (pregunta.includes("qué cursos puedo tomar")) {
+        let disponibles = [];
+        for (let curso in knowledgeBase.cursos) {
+          if (knowledgeBase.puedeTomar(curso, this.aprobados).puede)
+            disponibles.push(curso);
+        }
+        return disponibles.length
+          ? "Puedes tomar: " + disponibles.join(", ")
+          : "No hay cursos disponibles.";
+      }
+      
+      return "No entendí.";
+    }
+  }
+
+  // Interfaz de usuario
+  const bot = new Chatbot();
+  const chatContainer = document.getElementById('chat-container');
+  const userInput = document.getElementById('user-input');
+  const sendButton = document.getElementById('send-button');
+  const typingIndicator = document.getElementById('typing-indicator');
+  
+  function addMessage(text, isUser) {
+    const div = document.createElement('div');
+    div.className = 'message ' + (isUser ? 'user-message' : 'bot-message');
+    div.innerHTML = text;
+    chatContainer.appendChild(div);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+  
+  function showBotResponse(preg) {
+    typingIndicator.style.display = 'block';
+    setTimeout(() => {
+      typingIndicator.style.display = 'none';
+      let res = bot.procesa(preg);
+      addMessage(res, false);
+    }, 800);
+  }
+  
+  function handleSend() {
+    let text = userInput.value;
+    if (text) {
+      addMessage(text, true);
+      userInput.value = '';
+      showBotResponse(text);
+    }
+  }
+  
+  function insertExample(example) {
+    userInput.value = example;
+    userInput.focus();
+  }
+  
+  sendButton.addEventListener('click', handleSend);
+  userInput.addEventListener('keypress', function(e){
+    if (e.key === 'Enter') handleSend();
+  });
+  
+  addMessage("¡Hola! Soy tu asistente universitario. ¿En qué puedo ayudarte hoy?", false);
+  addMessage("Pregúntame sobre requisitos, horarios, créditos o registra cursos.", false);
+</script>
+</body>
+</html>
+
