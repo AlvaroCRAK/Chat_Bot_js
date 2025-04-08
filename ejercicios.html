@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Universitarios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1>🎓 Chatbot Universitario</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">ChatBot</a></li>
+                    <li><a href="ejercicios.html" class="active">Ejercicios</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <h2>Semanas Académicas</h2>
+            <nav>
+                <ul class="week-list">
+                    <!-- Semanas 1-16 -->
+                    <li class="week-item"><a href="#" class="week-link active">Semana 1</a></li>
+                    <li class="week-item"><a href="#" class="week-link">Semana 2</a></li>
+                    <!-- Más semanas pueden ser añadidas aquí -->
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section class="exercises-section">
+                <div class="exercise-list" id="week-1-exercises">
+                    <!-- Ejercicio 1: Identificación de conjuntos -->
+                    <div class="exercise-item">
+                        <h3>1.1 Identificación de conjuntos</h3>
+                        <h4>Ejercicio 01</h4>
+                        <p>Determine si los siguientes conjuntos son vacíos, finitos o infinitos:</p>
+                        <ul>
+                            <li>a) {2n + 1 | n ∈ N}</li>
+                            <li>b) {x ∈ Q | x ⩾ 0 and x ⩽ 0}</li>
+                            <li>c) {x ∈ Z | x² = 4}</li>
+                            <li>d) {x ∈ R | x² + 5x + 6 = 0}</li>
+                            <li>e) {x ∈ N | x < 10}</li>
+                            <li>f) {n ∈ N | n es primo}</li>
+                        </ul>
+                    </div>
+                    <!-- Otros ejercicios para la Semana 1 -->
+                </div>
+
+                <div class="exercise-list" id="week-2-exercises">
+                    <!-- Ejercicio 1: Operaciones con conjuntos -->
+                      <h2>CONJUNTOS</h2>
+                      <h2>Ejercicios de la Semana 2 y sus Soluciones</h2>
+                        <!-- Ejercicio 1: Identificación de conjuntos -->
+                        <div class="exercise-item">
+                          <h3>1.1 Identificación de conjuntos</h3>
+                          <h4>Ejercicio 01</h4>
+                          <p>
+                            Determine si los siguientes conjuntos son vacíos, finitos o infinitos:
+                          </p>
+                          <ul>
+                            <li>a) {2n + 1 | n ∈ N}</li>
+                            <li>b) {x ∈ Q | x ⩾ 0 and x ⩽ 0}</li>
+                            <li>c) {x ∈ Z | x² = 4}</li>
+                            <li>d) {x ∈ R | x² + 5x + 6 = 0}</li>
+                            <li>e) {x ∈ N | x < 10}</li>
+                            <li>f) {n ∈ N | n es primo}</li>
+                          </ul>
+                          <div class="solution">
+                            <h5>Solución:</h5>
+                            <p>
+                              <strong>a)</strong> El conjunto de números de la forma 2n+1 (n ∈ N) es el
+                              conjunto de números impares, el cual es <em>infinito</em>.
+                            </p>
+                            <p>
+                              <strong>b)</strong> La condición x ⩾ 0 and x ⩽ 0 implica que x = 0; por tanto,
+                              el conjunto es {0} y es <em>finito</em>.
+                            </p>
+                            <p>
+                              <strong>c)</strong> La ecuación x² = 4 tiene dos soluciones en Z: x = 2 y x = -2;
+                              el conjunto es <em>{2, -2}</em> y es <em>finito</em>.
+                            </p>
+                            <p>
+                              <strong>d)</strong> La ecuación x² + 5x + 6 = 0 se factoriza como (x+2)(x+3)=0;
+                              las soluciones son x = -2 y x = -3, por lo que el conjunto es <em>{-2, -3}</em> y es
+                              <em>finito</em>.
+                            </p>
+                            <p>
+                              <strong>e)</strong> El conjunto de naturales menores a 10 es <em>{1, 2, ..., 9}</em>
+                              (o {0,1,...,9} según la definición de N) y es <em>finito</em>.
+                            </p>
+                            <p>
+                              <strong>f)</strong> Se conoce que existen infinitos números primos, así que el
+                              conjunto es <em>infinito</em>.
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- Ejercicio 2: Operaciones con conjuntos -->
+                        <div class="exercise-item">
+                          <h3>1.2 Operaciones con conjuntos</h3>
+                          <h4>Ejercicio 02</h4>
+                          <p>Sean:</p>
+                          <ul>
+                            <li>A = {n ∈ N | 2 ⩽ n ⩽ 20 y n es primo} → A = {2, 3, 5, 7, 11, 13, 17, 19}</li>
+                            <li>B = {n ∈ N | n es par} (conjunto <em>infinito</em>)</li>
+                            <li>C = {n ∈ N | n es un múltiplo de 3} (conjunto <em>infinito</em>)</li>
+                          </ul>
+                          <p>Realice lo siguiente:</p>
+                          <ul>
+                            <li>
+                              a) Calcule la unión A ∪ B ∪ C.
+                            </li>
+                            <li>
+                              b) Calcule la intersección A ∩ B ∩ C.
+                            </li>
+                            <li>
+                              c) Calcule la diferencia A − (B ∪ C).
+                            </li>
+                            <li>
+                              d) Calcule la diferencia simétrica A∆B y luego determine (A∆B) ∩ C.
+                            </li>
+                            <li>
+                              e) Determine la cardinalidad de cada conjunto obtenido.
+                            </li>
+                          </ul>
+                          <div class="solution">
+                            <h5>Solución:</h5>
+                            <p>
+                              <strong>a)</strong> Dado que B y C son infinitos, la unión A ∪ B ∪ C es <em>infinita</em>.
+                            </p>
+                            <p>
+                              <strong>b)</strong> La intersección de A (primos) con B (pares) y C (múltiplos de 3):
+                              el único candidato en A que podría ser par es el 2, pero 2 no es múltiplo de 3, por
+                              lo tanto, A ∩ B ∩ C = <em>∅</em>.
+                            </p>
+                            <p>
+                              <strong>c)</strong> A − (B ∪ C) consiste en los elementos de A que no son ni pares ni
+                              múltiplos de 3. De A = {2,3,5,7,11,13,17,19}, eliminamos 2 (par) y 3 (múltiplo de 3):
+                              Quedan <em>{5, 7, 11, 13, 17, 19}</em> (6 elementos).
+                            </p>
+                            <p>
+                              <strong>d)</strong> La diferencia simétrica A∆B se define como (A ∪ B) − (A ∩ B).
+                              <br />
+                              - A - B = {primos impares de A} = {3, 5, 7, 11, 13, 17, 19}.<br />
+                              - B - A = Conjunto de números pares que no están en A.
+                              <br />Por lo tanto, A∆B es <em>infinito</em> y al intersectarlo con C (múltiplos de 3)
+                              se obtiene un conjunto <em>infinito</em>.
+                        </p>
+                        <p>
+                          <strong>e)</strong> Cardinalidades:
+                          <br />- |A| = 8.
+                          <br />- |B| = infinito.
+                          <br />- |C| = infinito.
+                          <br />- |A ∪ B ∪ C| = infinito.
+                          <br />- |A ∩ B ∩ C| = 0.
+                          <br />- |A − (B ∪ C)| = 6.
+                          <br />- |A∆B| y |(A∆B) ∩ C| son infinitos.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Ejercicio 3: Subconjuntos y complementos -->
+                    <div class="exercise-item">
+                      <h3>1.3 Subconjuntos y complementos</h3>
+                      <h4>Ejercicio 03</h4>
+                      <p>
+                        Sea el conjunto universal U = {a, b, c, d, e, f, g, h}, y sean A = {a, c, e, g} y
+                        B = {b, d, f, g, h}.
+                      </p>
+                      <p>Realice lo siguiente:</p>
+                      <ul>
+                        <li>a) Demuestre que A ⊆ U y B ⊆ U.</li>
+                        <li>b) Calcule la unión A ∪ B y la intersección A ∩ B.</li>
+                        <li>c) Determine el complemento de A respecto a U, es decir, U − A.</li>
+                        <li>d) Verifique si A ∩ (U − A) = ∅ y explique por qué.</li>
+                        <li>e) Calcule la cardinalidad de A, B y de U.</li>
+                      </ul>
+                      <div class="solution">
+                        <h5>Solución:</h5>
+                        <p>
+                          a) Por definición de subconjunto, <em>A ⊆ U</em> y <em>B ⊆ U</em> son
+                          verdaderos.
+                        </p>
+                        <p>
+                          b) A ∪ B = {a, b, c, d, e, f, g, h} (es el conjunto universal U) y A ∩ B = {g}.
+                        </p>
+                        <p>
+                          c) El complemento de A respecto a U es U − A = {b, d, f, h}.
+                        </p>
+                        <p>
+                          d) Dado que A y U − A no tienen elementos en común, se cumple que A ∩ (U − A)
+                          = ∅.
+                        </p>
+                        <p>
+                          e) |A| = 4, |B| = 5 y |U| = 8.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Ejercicio 4: Conjuntos definidos por comprensión -->
+                    <div class="exercise-item">
+                  <h3>1.4 Conjuntos definidos por comprensión</h3>
+                  <h4>Ejercicio 04</h4>
+                  <p>Sea X = {x ∈ Z | −5 ⩽ x ⩽ 9} y Y = {x ∈ X | x² < 54}.</p>
+                  <p>Realice lo siguiente:</p>
+                  <ul>
+                    <li>a) Escriba Y en notación por extensión.</li>
+                    <li>b) Calcule la cardinalidad de Y.</li>
+                    <li>c) Calcule Y ∩ {x ∈ Z | x > 0} y Y − {0}.</li>
+                  </ul>
+                  <div class="solution">
+                    <h5>Solución:</h5>
+                    <p>
+                      X = {−5, −4, −3, −2, −1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9} (15 elementos).
+                    </p>
+                    <p>
+                      Para Y: x² < 54 ⟹ |x| < √54 ≈ 7.35. Como X está acotado de −5 a 9, Y =
+                      {x ∈ X | x ≤ 7} = {−5, −4, −3, −2, −1, 0, 1, 2, 3, 4, 5, 6, 7} (13 elementos).
+                    </p>
+                    <p>
+                      a) Notación por extensión: Y = {−5, −4, −3, −2, −1, 0, 1, 2, 3, 4, 5, 6, 7}.
+                    </p>
+                    <p>
+                      b) |Y| = 13.
+                    </p>
+                    <p>
+                      c) Y ∩ {x ∈ Z | x > 0} = {1, 2, 3, 4, 5, 6, 7} y Y − {0} = {−5, −4, −3, −2, −1, 1, 2, 3, 4, 5, 6, 7}.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Ejercicio 5: Producto cartesiano y conjunto potencia -->
+                <div class="exercise-item">
+                  <h3>1.5 Producto cartesiano y conjunto potencia</h3>
+                  <h4>Ejercicio 05</h4>
+                  <p>Sean A = {1, 2, 3} y B = {a, b, c}.</p>
+                  <p>Realice lo siguiente:</p>
+                  <ul>
+                    <li>a) Calcule el producto cartesiano A × B.</li>
+                    <li>b) Determine el conjunto potencia P(A).</li>
+                    <li>c) ¿Cuál es la cardinalidad de P(A)?</li>
+                    <li>d) Calcule P(A × B) y discuta brevemente la diferencia con P(A) × P(B).</li>
+                  </ul>
+                  <div class="solution">
+                    <h5>Solución:</h5>
+                    <p>
+                      a) A × B = { (1, a), (1, b), (1, c), (2, a), (2, b), (2, c), (3, a), (3, b), (3, c) }.
+                    </p>
+                    <p>
+                      b) P(A) = { ∅, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3} }.
+                    </p>
+                    <p>
+                      c) |P(A)| = 2³ = 8.
+                    </p>
+                    <p>
+                      d) P(A × B) es el conjunto de todas las partes del conjunto A × B y tiene 2⁹ = 512 elementos, mientras que P(A) × P(B) es el producto cartesiano de los conjuntos potencia de A y B. Dado que |P(A)| = 8 y |P(B)| = 2³ = 8, |P(A) × P(B)| = 8 × 8 = 64. Por tanto, P(A × B) y P(A) × P(B) son conjuntos fundamentalmente diferentes en su estructura y cardinalidad.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Ejercicio 6: Intervalos y subconjuntos en R -->
+                <div class="exercise-item">
+                  <h3>1.6 Intervalos y subconjuntos en R</h3>
+                  <h4>Ejercicio 06</h4>
+                  <p>Sean los siguientes intervalos en R: A = [1, 5], B = (4, 12], C = [6, 10).</p>
+                  <p>Realice lo siguiente:</p>
+                  <ul>
+                    <li>a) Exprese A ∪ B y A ∩ B en notación de intervalos, justificando su respuesta.</li>
+                    <li>b) Calcule A − C y B − A y represéntelos en notación de intervalos o por extensión.</li>
+                    <li>c) Determine si A ⊆ B o B ⊆ A, y explique su razonamiento.</li>
+                    <li>d) Compare la relación de A y C en términos de subconjuntos y discuta si C es un subconjunto propio de A.</li>
+                  </ul>
+                  <div class="solution">
+                    <h5>Solución:</h5>
+                    <p>
+                      a) La unión A ∪ B = [1, 12] ya que A cubre [1, 5] y B cubre (4, 12]. La intersección A ∩ B es (4, 5] (números mayores que 4 y hasta 5, inclusive 5).
+                    </p>
+                    <p>
+                      b) A − C = [1, 5] ya que C = [6, 10) no interfiere con A; B − A = (5, 12] (números de B que son mayores que 5).
+                    </p>
+                    <p>
+                      c) A no es subconjunto de B, ya que A incluye números (por ejemplo, 1, 2, 3, 4) que no están en B; de igual forma, B no es subconjunto de A porque B incluye números mayores que 5.
+                    </p>
+                    <p>
+                      d) A y C son disjuntos (no tienen elementos en común); por lo tanto, C no es un subconjunto (ni propio) de A.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Ejercicio 7: Equipos en las Olimpiadas -->
+                <div class="exercise-item">
+                  <h3>1.7 Equipos en las Olimpiadas</h3>
+                  <h4>Ejercicio 07</h4>
+                  <p>
+                    En las Olimpiadas de la Facultad de FISI, los estudiantes se dividieron en tres equipos según su lenguaje de programación preferido:
+                  </p>
+                  <ul>
+                    <li>R: Equipo Ruby</li>
+                    <li>P: Equipo Python</li>
+                    <li>J: Equipo Java</li>
+                  </ul>
+                  <p>Se observó lo siguiente:</p>
+                  <ul>
+                    <li>1. Todo estudiante que participa en Ruby también pertenece a al menos uno de los otros dos equipos.</li>
+                    <li>2. Algunos estudiantes solo participan en el equipo de Java.</li>
+                    <li>3. Existen estudiantes que pertenecen simultáneamente a los tres equipos.</li>
+                    <li>4. Ningún estudiante está únicamente en el equipo de Ruby.</li>
+                  </ul>
+                  <p>Con esta información, determine:</p>
+                  <ul>
+                    <li>a) ¿Qué conjuntos nunca pueden estar vacíos? Justifique su respuesta.</li>
+                    <li>b) Exprese en notación de conjuntos la condición de que "ningún estudiante está solo en Ruby".</li>
+                    <li>
+                      c) Si hay 6 estudiantes en los tres equipos, 10 en Java pero no en Python, y 4 solo en Python, represente estos datos en un diagrama de Venn (describa brevemente la distribución).
+                    </li>
+                  </ul>
+                  <div class="solution">
+                    <h5>Solución:</h5>
+                    <p>
+                      a) Por lo observado, el conjunto de estudiantes que participan en Ruby junto a (P ∪ J) nunca es vacío, y además, el conjunto de estudiantes que participan en los tres equipos (R ∩ P ∩ J) tampoco es vacío.
+                    </p>
+                    <p>
+                      b) La condición "ningún estudiante está solo en Ruby" se expresa como: R ⊆ (P ∪ J).
+                    </p>
+                    <p>
+                      c) Una posible representación en el diagrama de Venn sería:
+                    </p>
+                    <ul>
+                      <li>La intersección de los tres equipos (R ∩ P ∩ J) contiene 6 estudiantes.</li>
+                      <li>En Java, fuera de la intersección con Python, hay 10 estudiantes.</li>
+                      <li>Exclusivamente en Python, hay 4 estudiantes.</li>
+                    </ul>
+                    <p>
+                      Se debe considerar que estos datos indican que, además, existen estudiantes que solo pertenecen a Java (por la observación 2) y que la totalidad de R está contenida en la unión P ∪ J (observación 4).
+                    </p>
+                  </div>
+                </div>
+                  <!-- Otros ejercicios para la Semana 2 -->
+              </div>
+
+                <!-- Aquí puedes agregar más semanas con su respectivo contenido -->
+            </section>
+        </main>
+    </div>
+
+    <a href="chatbot.html" class="float-button">💬</a>
+
+  <script>
+      // Función para alternar entre las semanas
+      document.addEventListener('DOMContentLoaded', () => {
+          const weekLinks = document.querySelectorAll('.week-link');
+
+          function showExercises(weekNumber) {
+              // Ocultar todos los ejercicios
+              document.querySelectorAll('.exercise-list').forEach(list => {
+                  list.style.display = 'none';
+              });
+
+              // Mostrar los ejercicios de la semana seleccionada
+              const weekExercises = document.getElementById(`week-${weekNumber}-exercises`);
+              if (weekExercises) {
+                  weekExercises.style.display = 'block';
+              }
+          }
+
+          // Agregar evento a los enlaces de las semanas
+          weekLinks.forEach(link => {
+              link.addEventListener('click', (e) => {
+                  e.preventDefault();
+
+                  // Obtener el número de semana desde el enlace
+                  const weekNumber = link.textContent.match(/\d+/)[0]; // Esto extrae el número de la semana (Ej: "Semana 1")
+
+                  // Llamar a la función para mostrar los ejercicios de esa semana
+                  showExercises(weekNumber);
+
+                  // Cambiar la clase "active" en el enlace
+                  weekLinks.forEach(l => l.classList.remove('active'));
+                  link.classList.add('active');
+              });
+          });
+
+          // Inicializar con los ejercicios de la semana 1 por defecto
+          showExercises(1);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,593 @@
+/* =====================================================
+   VARIABLES GLOBALES - Actualizadas
+===================================================== */
+:root {
+  /* Colores actualizados */
+  --primary-color: #2563eb;
+  --primary-hover: #1e40af;
+  --secondary-color: #4f46e5;
+  --background: linear-gradient(135deg, #f8fafc, #e0e7ff);
+  --chat-bg: rgba(255, 255, 255, 0.95);
+  --user-msg: #3b82f6;
+  --bot-msg: #f1f5f9;
+  --text-dark: #1e293b;
+  --nav-bg: rgba(16, 24, 39, 0.98);
+  --nav-text: #ffffff;
+  --example-bg: rgba(255, 255, 255, 0.9);
+  --example-hover: #e0e7ff;
+  
+  /* Nuevas variables */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+
+  /* Variables comunes */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius: 10px;
+  --transition: 0.3s ease;
+  --font-family: 'Roboto', sans-serif;
+  --header-bg: rgba(13, 110, 253, 0.95);
+  --header-border: rgba(255, 255, 255, 0.1);
+  --nav-link-hover: rgba(255, 255, 255, 0.15);
+  --text-gradient: linear-gradient(45deg, #fff, #e0f2ff);
+}
+
+/* =====================================================
+   REGLAS GLOBALES Y GENERALIDADES
+===================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--background);
+  color: var(--text-dark);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* =====================================================
+   HEADER Y NAVEGACIÓN MODERNA
+===================================================== */
+/* Header */
+.main-header {
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--header-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.main-header h1 {
+  font-size: 2.25rem;
+  background-image: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+}
+
+.main-header h1:hover {
+  transform: scale(1.02);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Navegación */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: var(--nav-link-hover);
+  color: white;
+}
+
+.nav-links a:hover::before {
+  width: 60%;
+}
+
+.nav-links a.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+  .main-header .container {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .main-header h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* =====================================================
+   SECCIÓN DE CHAT Y CONTENIDO PRINCIPAL
+===================================================== */
+/* Chat & Exercises Sections (Fondo, Bordes, Sombra) */
+.chat-section,
+.exercises-section {
+  background: var(--chat-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Caja de Chat */
+.chat-box {
+  height: 60vh;
+  min-height: 500px;
+  padding: 1.5rem;
+  background: var(--chat-bg);
+  border-radius: var(--radius);
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Mensajes */
+.message {
+  position: relative;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  max-width: 85%;
+  animation: fadeIn 0.3s ease;
+  border: 1px solid transparent;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.user-message {
+  background: var(--user-msg);
+  color: white;
+  margin-left: auto;
+  border-radius: 20px 20px 4px 20px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.bot-message {
+  background: var(--bot-msg);
+  border: 1px solid #e2e8f0;
+  margin-right: auto;
+  border-radius: 20px 20px 20px 4px;
+  position: relative;
+}
+
+.bot-message::before {
+  content: '🤖';
+  position: absolute;
+  left: -45px;
+  top: 0;
+  font-size: 1.5rem;
+}
+
+/* Área de Input */
+.input-area {
+  background: var(--chat-bg);
+  backdrop-filter: blur(10px);
+  position: relative;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+#user-input {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  flex-grow: 1;
+  transition: all 0.3s ease;
+}
+
+#user-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+#send-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--primary-color);
+  border: none;
+  border-radius: var(--radius);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#send-button::after {
+  content: '🚀';
+  margin-left: 0.5rem;
+}
+
+#send-button:hover {
+  background: var(--primary-hover);
+  transform: scale(1.1);
+}
+
+/* =====================================================
+   EJEMPLOS Y ELEMENTOS INTERACTIVOS
+===================================================== */
+.examples-section {
+  background: var(--example-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  padding: 1rem;
+}
+
+.examples-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.examples button {
+  position: relative;
+  overflow: hidden;
+  background: var(--example-bg);
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent;
+}
+
+.examples button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.examples button:hover::before {
+  opacity: 1;
+}
+
+.examples button:hover {
+  background: var(--example-hover);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================================
+   SIDEBAR Y BOTÓN FLOTANTE
+===================================================== */
+/* Sidebar */
+.sidebar {
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1.5rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  height: calc(100vh - 68px);
+  position: sticky;
+  top: 68px;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.week-list {
+  list-style: none;
+}
+
+.week-item {
+  margin-bottom: 0.5rem;
+}
+
+.week-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.week-link:hover,
+.week-link.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+.week-link.active {
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Botón Flotante */
+.float-button {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+  border: 2px solid white;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.float-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-5px);
+}
+
+/* =====================================================
+   INDICADOR DE ESCRITURA Y BARRA DE PROGRESO
+===================================================== */
+.typing-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bot-msg);
+  border-radius: 20px;
+  font-style: normal;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+}
+
+/* Barra de Progreso para ejercicios */
+.exercise-progress {
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+/* =====================================================
+   ESTILOS RESPONSIVOS ADICIONALES
+===================================================== */
+@media (max-width: 768px) {
+  .chat-box {
+    height: 70vh;
+    border-radius: 0;
+  }
+  
+  .bot-message::before {
+    display: none;
+  }
+  
+  .message {
+    max-width: 90%;
+  }
+  
+  .float-button {
+    bottom: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .examples {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .examples button {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* =====================================================
+   EFECTOS GLOBALES DE HOVER
+===================================================== */
+button, .clickable {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* Contenedor principal que agrupa sidebar y main-content */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Alinea en la parte superior */
+  justify-content: center; /* Centra el contenido principal */
+  gap: 1rem; /* Espacio entre sidebar y contenido */
+  padding: 1rem;
+}
+
+/* Sidebar: fija a la izquierda con un ancho definido */
+.sidebar {
+  width: 250px; /* Ajusta según tus necesidades */
+  flex-shrink: 0; /* Evita que se reduzca su ancho */
+}
+
+/* Main-content: se expande para ocupar el espacio central */
+.main-content {
+  flex-grow: 1;
+  max-width: 1400px; /* O el ancho que prefieras */
+  margin: 0 auto;
+}      
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2563eb;
+}
+.exercise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.exercise-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  background: #f9fafb;
+}
+.exercise-item h3 {
+  margin-bottom: 0.5rem;
+  color: #1d4ed8;
+}
+.exercise-item h4 {
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+}
+.exercise-item p {
+  margin-bottom: 0.5rem;
+}
+.exercise-item ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+/* Sección de solución */
+.solution {
+  background: #e0f2fe;
+  border-left: 4px solid #2563eb;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+.solution h5 {
+  margin-bottom: 0.5rem;
+  color: #1d4ed8;
+}
+.solution p,
+.solution ul {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+.solution ul {
+  margin-left: 1.5rem;
+}
