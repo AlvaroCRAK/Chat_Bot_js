@@ -1,395 +1,1077 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicios Universitarios</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
     <header class="main-header">
-        <div class="container">
-            <h1>🎓 Chatbot Universitario</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">ChatBot</a></li>
-                    <li><a href="ejercicios.html" class="active">Ejercicios</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <h1>🎓 Chatbot Universitario</h1>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">ChatBot</a></li>
+            <li><a href="ejercicios.html" class="active">Ejercicios</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <div class="main-container">
-        <aside class="sidebar">
-            <h2>Semanas Académicas</h2>
-            <nav>
-                <ul class="week-list">
-                    <!-- Semanas 1-16 -->
-                    <li class="week-item"><a href="#" class="week-link active">Semana 1</a></li>
-                    <li class="week-item"><a href="#" class="week-link">Semana 2</a></li>
-                    <!-- Más semanas pueden ser añadidas aquí -->
-                </ul>
-            </nav>
-        </aside>
+      <aside class="sidebar">
+        <h2>Semanas Académicas</h2>
+        <nav>
+          <ul class="week-list">
+            <!-- Semanas 1-16 -->
+            <li class="week-item">
+              <a href="#" class="week-link active">Semana 1</a>
+            </li>
+            <li class="week-item">
+              <a href="#" class="week-link">Semana 2</a>
+            </li>
+            <li class="week-item">
+              <a href="#" class="week-link">Semana 3</a>
+            </li>
+            <!-- Más semanas pueden ser añadidas aquí -->
+          </ul>
+        </nav>
+      </aside>
 
-        <main class="main-content">
-            <section class="exercises-section">
-                <div class="exercise-list" id="week-1-exercises">
-                    <!-- Ejercicio 1: Identificación de conjuntos -->
-                    <div class="exercise-item">
-                        <h3>1.1 Identificación de conjuntos</h3>
-                        <h4>Ejercicio 01</h4>
-                        <p>Determine si los siguientes conjuntos son vacíos, finitos o infinitos:</p>
-                        <ul>
-                            <li>a) {2n + 1 | n ∈ N}</li>
-                            <li>b) {x ∈ Q | x ⩾ 0 and x ⩽ 0}</li>
-                            <li>c) {x ∈ Z | x² = 4}</li>
-                            <li>d) {x ∈ R | x² + 5x + 6 = 0}</li>
-                            <li>e) {x ∈ N | x < 10}</li>
-                            <li>f) {n ∈ N | n es primo}</li>
-                        </ul>
-                    </div>
-                    <!-- Otros ejercicios para la Semana 1 -->
-                </div>
+      <main class="main-content">
+        <section class="exercises-section">
+          <div class="exercise-list" id="week-1-exercises">
+            <h2>Lógica Proposicional</h2>
+            <h2>Ejercicios de la Tarea I y sus Soluciones</h2>
 
-                <div class="exercise-list" id="week-2-exercises">
-                    <!-- Ejercicio 1: Operaciones con conjuntos -->
-                      <h2>CONJUNTOS</h2>
-                      <h2>Ejercicios de la Semana 2 y sus Soluciones</h2>
-                        <!-- Ejercicio 1: Identificación de conjuntos -->
-                        <div class="exercise-item">
-                          <h3>1.1 Identificación de conjuntos</h3>
-                          <h4>Ejercicio 01</h4>
-                          <p>
-                            Determine si los siguientes conjuntos son vacíos, finitos o infinitos:
-                          </p>
-                          <ul>
-                            <li>a) {2n + 1 | n ∈ N}</li>
-                            <li>b) {x ∈ Q | x ⩾ 0 and x ⩽ 0}</li>
-                            <li>c) {x ∈ Z | x² = 4}</li>
-                            <li>d) {x ∈ R | x² + 5x + 6 = 0}</li>
-                            <li>e) {x ∈ N | x < 10}</li>
-                            <li>f) {n ∈ N | n es primo}</li>
-                          </ul>
-                          <div class="solution">
-                            <h5>Solución:</h5>
-                            <p>
-                              <strong>a)</strong> El conjunto de números de la forma 2n+1 (n ∈ N) es el
-                              conjunto de números impares, el cual es <em>infinito</em>.
-                            </p>
-                            <p>
-                              <strong>b)</strong> La condición x ⩾ 0 and x ⩽ 0 implica que x = 0; por tanto,
-                              el conjunto es {0} y es <em>finito</em>.
-                            </p>
-                            <p>
-                              <strong>c)</strong> La ecuación x² = 4 tiene dos soluciones en Z: x = 2 y x = -2;
-                              el conjunto es <em>{2, -2}</em> y es <em>finito</em>.
-                            </p>
-                            <p>
-                              <strong>d)</strong> La ecuación x² + 5x + 6 = 0 se factoriza como (x+2)(x+3)=0;
-                              las soluciones son x = -2 y x = -3, por lo que el conjunto es <em>{-2, -3}</em> y es
-                              <em>finito</em>.
-                            </p>
-                            <p>
-                              <strong>e)</strong> El conjunto de naturales menores a 10 es <em>{1, 2, ..., 9}</em>
-                              (o {0,1,...,9} según la definición de N) y es <em>finito</em>.
-                            </p>
-                            <p>
-                              <strong>f)</strong> Se conoce que existen infinitos números primos, así que el
-                              conjunto es <em>infinito</em>.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- Ejercicio 2: Operaciones con conjuntos -->
-                        <div class="exercise-item">
-                          <h3>1.2 Operaciones con conjuntos</h3>
-                          <h4>Ejercicio 02</h4>
-                          <p>Sean:</p>
-                          <ul>
-                            <li>A = {n ∈ N | 2 ⩽ n ⩽ 20 y n es primo} → A = {2, 3, 5, 7, 11, 13, 17, 19}</li>
-                            <li>B = {n ∈ N | n es par} (conjunto <em>infinito</em>)</li>
-                            <li>C = {n ∈ N | n es un múltiplo de 3} (conjunto <em>infinito</em>)</li>
-                          </ul>
-                          <p>Realice lo siguiente:</p>
-                          <ul>
-                            <li>
-                              a) Calcule la unión A ∪ B ∪ C.
-                            </li>
-                            <li>
-                              b) Calcule la intersección A ∩ B ∩ C.
-                            </li>
-                            <li>
-                              c) Calcule la diferencia A − (B ∪ C).
-                            </li>
-                            <li>
-                              d) Calcule la diferencia simétrica A∆B y luego determine (A∆B) ∩ C.
-                            </li>
-                            <li>
-                              e) Determine la cardinalidad de cada conjunto obtenido.
-                            </li>
-                          </ul>
-                          <div class="solution">
-                            <h5>Solución:</h5>
-                            <p>
-                              <strong>a)</strong> Dado que B y C son infinitos, la unión A ∪ B ∪ C es <em>infinita</em>.
-                            </p>
-                            <p>
-                              <strong>b)</strong> La intersección de A (primos) con B (pares) y C (múltiplos de 3):
-                              el único candidato en A que podría ser par es el 2, pero 2 no es múltiplo de 3, por
-                              lo tanto, A ∩ B ∩ C = <em>∅</em>.
-                            </p>
-                            <p>
-                              <strong>c)</strong> A − (B ∪ C) consiste en los elementos de A que no son ni pares ni
-                              múltiplos de 3. De A = {2,3,5,7,11,13,17,19}, eliminamos 2 (par) y 3 (múltiplo de 3):
-                              Quedan <em>{5, 7, 11, 13, 17, 19}</em> (6 elementos).
-                            </p>
-                            <p>
-                              <strong>d)</strong> La diferencia simétrica A∆B se define como (A ∪ B) − (A ∩ B).
-                              <br />
-                              - A - B = {primos impares de A} = {3, 5, 7, 11, 13, 17, 19}.<br />
-                              - B - A = Conjunto de números pares que no están en A.
-                              <br />Por lo tanto, A∆B es <em>infinito</em> y al intersectarlo con C (múltiplos de 3)
-                              se obtiene un conjunto <em>infinito</em>.
-                        </p>
-                        <p>
-                          <strong>e)</strong> Cardinalidades:
-                          <br />- |A| = 8.
-                          <br />- |B| = infinito.
-                          <br />- |C| = infinito.
-                          <br />- |A ∪ B ∪ C| = infinito.
-                          <br />- |A ∩ B ∩ C| = 0.
-                          <br />- |A − (B ∪ C)| = 6.
-                          <br />- |A∆B| y |(A∆B) ∩ C| son infinitos.
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- Ejercicio 3: Subconjuntos y complementos -->
-                    <div class="exercise-item">
-                      <h3>1.3 Subconjuntos y complementos</h3>
-                      <h4>Ejercicio 03</h4>
-                      <p>
-                        Sea el conjunto universal U = {a, b, c, d, e, f, g, h}, y sean A = {a, c, e, g} y
-                        B = {b, d, f, g, h}.
-                      </p>
-                      <p>Realice lo siguiente:</p>
-                      <ul>
-                        <li>a) Demuestre que A ⊆ U y B ⊆ U.</li>
-                        <li>b) Calcule la unión A ∪ B y la intersección A ∩ B.</li>
-                        <li>c) Determine el complemento de A respecto a U, es decir, U − A.</li>
-                        <li>d) Verifique si A ∩ (U − A) = ∅ y explique por qué.</li>
-                        <li>e) Calcule la cardinalidad de A, B y de U.</li>
-                      </ul>
-                      <div class="solution">
-                        <h5>Solución:</h5>
-                        <p>
-                          a) Por definición de subconjunto, <em>A ⊆ U</em> y <em>B ⊆ U</em> son
-                          verdaderos.
-                        </p>
-                        <p>
-                          b) A ∪ B = {a, b, c, d, e, f, g, h} (es el conjunto universal U) y A ∩ B = {g}.
-                        </p>
-                        <p>
-                          c) El complemento de A respecto a U es U − A = {b, d, f, h}.
-                        </p>
-                        <p>
-                          d) Dado que A y U − A no tienen elementos en común, se cumple que A ∩ (U − A)
-                          = ∅.
-                        </p>
-                        <p>
-                          e) |A| = 4, |B| = 5 y |U| = 8.
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- Ejercicio 4: Conjuntos definidos por comprensión -->
-                    <div class="exercise-item">
-                  <h3>1.4 Conjuntos definidos por comprensión</h3>
-                  <h4>Ejercicio 04</h4>
-                  <p>Sea X = {x ∈ Z | −5 ⩽ x ⩽ 9} y Y = {x ∈ X | x² < 54}.</p>
-                  <p>Realice lo siguiente:</p>
-                  <ul>
-                    <li>a) Escriba Y en notación por extensión.</li>
-                    <li>b) Calcule la cardinalidad de Y.</li>
-                    <li>c) Calcule Y ∩ {x ∈ Z | x > 0} y Y − {0}.</li>
-                  </ul>
-                  <div class="solution">
-                    <h5>Solución:</h5>
-                    <p>
-                      X = {−5, −4, −3, −2, −1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9} (15 elementos).
-                    </p>
-                    <p>
-                      Para Y: x² < 54 ⟹ |x| < √54 ≈ 7.35. Como X está acotado de −5 a 9, Y =
-                      {x ∈ X | x ≤ 7} = {−5, −4, −3, −2, −1, 0, 1, 2, 3, 4, 5, 6, 7} (13 elementos).
-                    </p>
-                    <p>
-                      a) Notación por extensión: Y = {−5, −4, −3, −2, −1, 0, 1, 2, 3, 4, 5, 6, 7}.
-                    </p>
-                    <p>
-                      b) |Y| = 13.
-                    </p>
-                    <p>
-                      c) Y ∩ {x ∈ Z | x > 0} = {1, 2, 3, 4, 5, 6, 7} y Y − {0} = {−5, −4, −3, −2, −1, 1, 2, 3, 4, 5, 6, 7}.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Ejercicio 5: Producto cartesiano y conjunto potencia -->
-                <div class="exercise-item">
-                  <h3>1.5 Producto cartesiano y conjunto potencia</h3>
-                  <h4>Ejercicio 05</h4>
-                  <p>Sean A = {1, 2, 3} y B = {a, b, c}.</p>
-                  <p>Realice lo siguiente:</p>
-                  <ul>
-                    <li>a) Calcule el producto cartesiano A × B.</li>
-                    <li>b) Determine el conjunto potencia P(A).</li>
-                    <li>c) ¿Cuál es la cardinalidad de P(A)?</li>
-                    <li>d) Calcule P(A × B) y discuta brevemente la diferencia con P(A) × P(B).</li>
-                  </ul>
-                  <div class="solution">
-                    <h5>Solución:</h5>
-                    <p>
-                      a) A × B = { (1, a), (1, b), (1, c), (2, a), (2, b), (2, c), (3, a), (3, b), (3, c) }.
-                    </p>
-                    <p>
-                      b) P(A) = { ∅, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3} }.
-                    </p>
-                    <p>
-                      c) |P(A)| = 2³ = 8.
-                    </p>
-                    <p>
-                      d) P(A × B) es el conjunto de todas las partes del conjunto A × B y tiene 2⁹ = 512 elementos, mientras que P(A) × P(B) es el producto cartesiano de los conjuntos potencia de A y B. Dado que |P(A)| = 8 y |P(B)| = 2³ = 8, |P(A) × P(B)| = 8 × 8 = 64. Por tanto, P(A × B) y P(A) × P(B) son conjuntos fundamentalmente diferentes en su estructura y cardinalidad.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Ejercicio 6: Intervalos y subconjuntos en R -->
-                <div class="exercise-item">
-                  <h3>1.6 Intervalos y subconjuntos en R</h3>
-                  <h4>Ejercicio 06</h4>
-                  <p>Sean los siguientes intervalos en R: A = [1, 5], B = (4, 12], C = [6, 10).</p>
-                  <p>Realice lo siguiente:</p>
-                  <ul>
-                    <li>a) Exprese A ∪ B y A ∩ B en notación de intervalos, justificando su respuesta.</li>
-                    <li>b) Calcule A − C y B − A y represéntelos en notación de intervalos o por extensión.</li>
-                    <li>c) Determine si A ⊆ B o B ⊆ A, y explique su razonamiento.</li>
-                    <li>d) Compare la relación de A y C en términos de subconjuntos y discuta si C es un subconjunto propio de A.</li>
-                  </ul>
-                  <div class="solution">
-                    <h5>Solución:</h5>
-                    <p>
-                      a) La unión A ∪ B = [1, 12] ya que A cubre [1, 5] y B cubre (4, 12]. La intersección A ∩ B es (4, 5] (números mayores que 4 y hasta 5, inclusive 5).
-                    </p>
-                    <p>
-                      b) A − C = [1, 5] ya que C = [6, 10) no interfiere con A; B − A = (5, 12] (números de B que son mayores que 5).
-                    </p>
-                    <p>
-                      c) A no es subconjunto de B, ya que A incluye números (por ejemplo, 1, 2, 3, 4) que no están en B; de igual forma, B no es subconjunto de A porque B incluye números mayores que 5.
-                    </p>
-                    <p>
-                      d) A y C son disjuntos (no tienen elementos en común); por lo tanto, C no es un subconjunto (ni propio) de A.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Ejercicio 7: Equipos en las Olimpiadas -->
-                <div class="exercise-item">
-                  <h3>1.7 Equipos en las Olimpiadas</h3>
-                  <h4>Ejercicio 07</h4>
-                  <p>
-                    En las Olimpiadas de la Facultad de FISI, los estudiantes se dividieron en tres equipos según su lenguaje de programación preferido:
-                  </p>
-                  <ul>
-                    <li>R: Equipo Ruby</li>
-                    <li>P: Equipo Python</li>
-                    <li>J: Equipo Java</li>
-                  </ul>
-                  <p>Se observó lo siguiente:</p>
-                  <ul>
-                    <li>1. Todo estudiante que participa en Ruby también pertenece a al menos uno de los otros dos equipos.</li>
-                    <li>2. Algunos estudiantes solo participan en el equipo de Java.</li>
-                    <li>3. Existen estudiantes que pertenecen simultáneamente a los tres equipos.</li>
-                    <li>4. Ningún estudiante está únicamente en el equipo de Ruby.</li>
-                  </ul>
-                  <p>Con esta información, determine:</p>
-                  <ul>
-                    <li>a) ¿Qué conjuntos nunca pueden estar vacíos? Justifique su respuesta.</li>
-                    <li>b) Exprese en notación de conjuntos la condición de que "ningún estudiante está solo en Ruby".</li>
-                    <li>
-                      c) Si hay 6 estudiantes en los tres equipos, 10 en Java pero no en Python, y 4 solo en Python, represente estos datos en un diagrama de Venn (describa brevemente la distribución).
-                    </li>
-                  </ul>
-                  <div class="solution">
-                    <h5>Solución:</h5>
-                    <p>
-                      a) Por lo observado, el conjunto de estudiantes que participan en Ruby junto a (P ∪ J) nunca es vacío, y además, el conjunto de estudiantes que participan en los tres equipos (R ∩ P ∩ J) tampoco es vacío.
-                    </p>
-                    <p>
-                      b) La condición "ningún estudiante está solo en Ruby" se expresa como: R ⊆ (P ∪ J).
-                    </p>
-                    <p>
-                      c) Una posible representación en el diagrama de Venn sería:
-                    </p>
-                    <ul>
-                      <li>La intersección de los tres equipos (R ∩ P ∩ J) contiene 6 estudiantes.</li>
-                      <li>En Java, fuera de la intersección con Python, hay 10 estudiantes.</li>
-                      <li>Exclusivamente en Python, hay 4 estudiantes.</li>
-                    </ul>
-                    <p>
-                      Se debe considerar que estos datos indican que, además, existen estudiantes que solo pertenecen a Java (por la observación 2) y que la totalidad de R está contenida en la unión P ∪ J (observación 4).
-                    </p>
-                  </div>
-                </div>
-                  <!-- Otros ejercicios para la Semana 2 -->
+            <!-- Ejercicio 1.1.1 -->
+            <div class="exercise-item">
+              <h3>1.1 Identificación de proposiciones</h3>
+              <h4>Ejercicio 01</h4>
+              <p>
+                Indique cuáles de los siguientes enunciados son proposiciones
+                lógicas y expréselos simbólicamente.
+              </p>
+              <ul>
+                <li>
+                  a) Álgebra Lineal es una asignatura de Ciencias Básicas.
+                </li>
+                <li>
+                  b) Carlos comprará un auto nuevo si y solo si consigue un
+                  ascenso en su trabajo.
+                </li>
+                <li>c) El docente del curso.</li>
+                <li>
+                  d) El Sol es una estrella o la Tierra es el centro del
+                  universo.
+                </li>
+                <li>
+                  e) Si José estudia mucho, entonces no sacará mala nota ni
+                  reprobará el curso.
+                </li>
+                <li>f) ¿La lluvia cesará en la próxima hora?</li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>a)</strong> Es proposición. Definimos <em>p</em>:
+                  “Álgebra Lineal es una asignatura de Ciencias Básicas.”
+                </p>
+                <p>
+                  <strong>b)</strong> Es proposición compuesta. Sea <em>q</em>:
+                  “Carlos comprará un auto nuevo”, <em>r</em>: “Carlos consigue
+                  un ascenso”. Forma: <em>q ↔ r</em>.
+                </p>
+                <p><strong>c)</strong> No es proposición (frase incompleta).</p>
+                <p>
+                  <strong>d)</strong> Es proposición compuesta. Sea <em>s</em>:
+                  “El Sol es una estrella”, <em>t</em>: “La Tierra es el centro
+                  del universo”. Forma: <em>s ∨ t</em>.
+                </p>
+                <p>
+                  <strong>e)</strong> Es proposición compuesta. Sea <em>u</em>:
+                  “José estudia mucho”, <em>v</em>: “sacará mala nota”,
+                  <em>w</em>: “reprobará el curso”. Forma:
+                  <em>u → (¬v ∧ ¬w)</em>.
+                </p>
+                <p><strong>f)</strong> No es proposición (pregunta).</p>
               </div>
+            </div>
 
-                <!-- Aquí puedes agregar más semanas con su respectivo contenido -->
-            </section>
-        </main>
+            <!-- Ejercicio 1.1.2 -->
+            <div class="exercise-item">
+              <h3>1.1 Identificación de proposiciones</h3>
+              <h4>Ejercicio 02</h4>
+              <p>La fórmula <em>(p ∨ q) → r</em> se traduce como:</p>
+              <ul>
+                <li>a) Si estudio y practico, entonces aprobaré el examen.</li>
+                <li>b) Si hace frío y llueve, entonces me quedaré en casa.</li>
+                <li>
+                  c) Comer saludable y hacer ejercicio es bueno para la salud.
+                </li>
+                <li>
+                  d) Si duermo temprano y me levanto temprano, entonces tendré
+                  más energía.
+                </li>
+                <li>
+                  e) Si no leo libros ni veo documentales, no aprenderé sobre
+                  historia.
+                </li>
+              </ul>
+              <p>
+                Además: Elija al menos dos de las traducciones anteriores y
+                construya su tabla de verdad. Justifique si las proposiciones
+                resultantes son tautologías, contradicciones o contingencias.
+              </p>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  Tomamos las traducciones <em>a)</em> y <em>b)</em> como
+                  ejemplos (aunque usando conjunción):
+                </p>
+                <p>
+                  <strong>a)</strong> Traducción simbólica:
+                  <em>(p ∧ q) → r</em>. Tabla de verdad:
+                </p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>p</th>
+                      <th>q</th>
+                      <th>r</th>
+                      <th>p ∧ q</th>
+                      <th>(p ∧ q) → r</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>V</td>
+                      <td>V</td>
+                      <td>V</td>
+                      <td>V</td>
+                      <td>V</td>
+                    </tr>
+                    <tr>
+                      <td>V</td>
+                      <td>V</td>
+                      <td>F</td>
+                      <td>V</td>
+                      <td>F</td>
+                    </tr>
+                    <tr>
+                      <td>V</td>
+                      <td>F</td>
+                      <td>V</td>
+                      <td>F</td>
+                      <td>V</td>
+                    </tr>
+                    <tr>
+                      <td>V</td>
+                      <td>F</td>
+                      <td>F</td>
+                      <td>F</td>
+                      <td>V</td>
+                    </tr>
+                    <tr>
+                      <td>F</td>
+                      <td>V</td>
+                      <td>V</td>
+                      <td>F</td>
+                      <td>V</td>
+                    </tr>
+                    <tr>
+                      <td>F</td>
+                      <td>V</td>
+                      <td>F</td>
+                      <td>F</td>
+                      <td>V</td>
+                    </tr>
+                    <tr>
+                      <td>F</td>
+                      <td>F</td>
+                      <td>V</td>
+                      <td>F</td>
+                      <td>V</td>
+                    </tr>
+                    <tr>
+                      <td>F</td>
+                      <td>F</td>
+                      <td>F</td>
+                      <td>F</td>
+                      <td>V</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>
+                  Al aparecer una <strong>F</strong>, es <em>contingencia</em>.
+                </p>
+                <p>
+                  <strong>b)</strong> Traducción simbólica:
+                  <em>(s ∧ t) → u</em>. Su tabla de verdad (estructura similar)
+                  muestra también al menos una <strong>F</strong>, por lo que es
+                  <em>contingencia</em>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 1.2 -->
+            <div class="exercise-item">
+              <h3>1.2 Tablas de verdad</h3>
+              <h4>Ejercicio 03</h4>
+              <p>
+                Construya las tablas de verdad de las siguientes proposiciones:
+              </p>
+              <ul>
+                <li>a) <em>(p ∨ q) → r → (p ∧ ¬q) → r</em></li>
+                <li>b) <em>(p ∨ q ∨ s) → r → (p ∧ ¬q) → (r ∨ s)</em></li>
+                <li>c) <em>(p → ¬q) ∨ (¬p ∨ r)</em></li>
+                <li>d) <em>(p → q) → (p ∨ ¬q) → (p ∧ q)</em></li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  Tras desarrollar las tablas (8 filas para c), 16 para b)), se
+                  verifica que todas las fórmulas son <em>contingencias</em> (no
+                  siempre V ni siempre F).
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 1.3 -->
+            <div class="exercise-item">
+              <h3>1.3 Simplificación de proposiciones</h3>
+              <h4>Ejercicio 04</h4>
+              <p>
+                Decida si los siguientes esquemas son tautología, contradicción
+                o contingencia y simplifíquelos:
+              </p>
+              <ul>
+                <li>a) <em>¬(p → r) ↔ (¬p ∨ r)</em></li>
+                <li>b) <em>(p → q) → (r ∧ p) → (q ∧ r)</em></li>
+                <li>c) <em>(p ∧ r) → (p ∨ q)</em></li>
+                <li>d) <em>(q ∧ r) → p</em></li>
+                <li>e) <em>r → [p → (q → q)]</em></li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  a) ¬(p → r) ≡ ¬(¬p ∨ r) ≡ p ∧ ¬r. La bicondicional con (¬p ∨
+                  r) es contingencia.
+                </p>
+                <p>
+                  b) Simplifica a ¬(¬p ∨ q) ∨ (¬r ∨ ¬p ∨ q ∨ r) ≡ (p ∧ ¬q) ∨ V ≡
+                  V. Por tanto, es <em>tautología</em>.
+                </p>
+                <p>
+                  c) ≡ ¬(p ∧ r) ∨ (p ∨ q) ≡ (¬p ∨ ¬r ∨ p ∨ q) ≡ V,
+                  <em>tautología</em>.
+                </p>
+                <p>d) ≡ ¬(q ∧ r) ∨ p ≡ ¬q ∨ ¬r ∨ p, <em>contingencia</em>.</p>
+                <p>
+                  e) (q → q) ≡ V, luego r → (p → V) ≡ r → V ≡ V,
+                  <em>tautología</em>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 1.3.2 -->
+            <div class="exercise-item">
+              <h3>1.3 Simplificación de proposiciones</h3>
+              <h4>Ejercicio 05</h4>
+              <p>Simplifique las siguientes proposiciones:</p>
+              <ul>
+                <li>a) <em>(¬p ∧ q) → (¬r ∨ r) ∧ ¬q</em></li>
+                <li>b) <em>(p → p) ∨ q ∧ ¬q ∨ (r ∧ q) ∧ (p → p) ∨ ¬q</em></li>
+                <li>c) <em>¬((p ∨ q) → ¬(r → p)) ∨ ¬(q → p)</em></li>
+                <li>d) <em>(p → q) ∧ p ∨ ¬(q → p) → ¬(p ∨ ¬q)</em></li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>a) (¬r ∨ r) ≡ V, luego (¬p ∧ q) → V ≡ V, y V ∧ ¬q ≡ ¬q.</p>
+                <p>
+                  b) (p → p) ≡ V, la expresión queda V ∨ F ∨ (r ∧ q) ∨ ¬q ≡ V.
+                </p>
+                <p>
+                  c) (p ∨ q) → ¬(r → p) ≡ ¬(p ∨ q) ∨ (r ∧ ¬p). Negación total ≡
+                  (p ∨ q) ∧ (¬r ∨ p). Luego ∨ ¬(q → p) ≡ contingencia.
+                </p>
+                <p>
+                  d) (p → q) ∧ p ≡ p ∧ q; ¬(q → p) ≡ q ∧ ¬p; antecedente ≡ q.
+                  Entonces q → ¬(p ∨ ¬q) ≡ ¬q ∨ (¬p ∧ q) ≡ ¬p ∨ ¬q,
+                  <em>contingencia</em>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 1.4 -->
+            <div class="exercise-item">
+              <h3>1.4 Formalización y análisis de argumentos</h3>
+              <h4>Ejercicio 06</h4>
+              <p>Formalice y analice los siguientes argumentos:</p>
+              <ul>
+                <li>
+                  a) Si hace frío o empieza a llover, nos quedaremos en casa o
+                  iremos al cine. Si nos quedamos en casa o vamos al cine, no
+                  iremos al parque mañana. Pero sí iremos al parque mañana.
+                  Concluya que no hace frío.
+                </li>
+                <li>
+                  b) Conseguiré el trabajo si tengo experiencia. Conseguiré el
+                  trabajo si y solo si paso la entrevista y tengo buenas
+                  referencias. Sin embargo, no tengo buenas referencias, por lo
+                  que no tengo experiencia. Determine la validez del argumento.
+                </li>
+                <li>
+                  c) Si hay tráfico o el autobús se retrasa, llegaré tarde o
+                  tendré que tomar un taxi. Si llego tarde o tomo un taxi, no
+                  podré asistir a la reunión a tiempo. Pero sí asistí a la
+                  reunión a tiempo. Por lo tanto, no hay tráfico.
+                </li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  a) Variables: p: hace frío, q: empieza a llover, r: quedarnos
+                  en casa, s: ir al cine, t: iremos al parque. Premisas: (p ∨ q)
+                  → (r ∨ s); (r ∨ s) → ¬t; t. Conclusión: ¬p. Formal: [(p ∨ q) →
+                  (r ∨ s)] ∧ [(r ∨ s) → ¬t] ∧ t → ¬p. Tabla de verdad muestra
+                  que siempre V, por tanto argumento <em>válido</em>.
+                </p>
+                <p>
+                  b) Variables: x: tengo experiencia, y: paso entrevista, z:
+                  tengo buenas referencias, w: consigo trabajo. Premisas: x → w;
+                  w ↔ (y ∧ z); ¬z. Conclusión: ¬x. Formal: [x → w] ∧ [w ↔ (y ∧
+                  z)] ∧ ¬z → ¬x. Tabla muestra <em>contingencia</em>, argumento
+                  <em>inválido</em>.
+                </p>
+                <p>
+                  c) Variables: p: hay tráfico, q: autobús se retrasa, r: llego
+                  tarde, s: tomo taxi, t: asisto reunión. Premisas: (p ∨ q) → (r
+                  ∨ s); (r ∨ s) → ¬t; t. Conclusión: ¬p ∧ ¬q. Formal: [(p ∨ q) →
+                  (r ∨ s)] ∧ [(r ∨ s) → ¬t] ∧ t → ¬(p ∨ q). Tabla resulta
+                  siempre V, argumento <em>válido</em>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 1.5 -->
+            <div class="exercise-item">
+              <h3>1.5 Verificación de negaciones en lógica de predicados</h3>
+              <h4>Ejercicio 07</h4>
+              <p>
+                Verifique que la negación de cada una de las siguientes
+                proposiciones cuantificadas sea la indicada:
+              </p>
+              <ul>
+                <li>a) ∀x ∃y (x &lt; y) es ∃x ∀y (x ≥ y).</li>
+                <li>b) ∃x ∀y (xy ≥ 0) es ∀x ∃y (xy &lt; 0).</li>
+                <li>c) ∀x (P(x) ∨ Q(x)) es ∃x (¬P(x) ∧ ¬Q(x)).</li>
+                <li>d) ∃x ∀y (R(x, y) → S(y)) es ∀x ∃y (R(x, y) ∧ ¬S(y)).</li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  a) ¬∀x A ≡ ∃x ¬A; ¬∃y B ≡ ∀y ¬B; ¬(x &lt; y) ≡ x ≥ y ⇒ ∃x ∀y
+                  (x ≥ y).
+                </p>
+                <p>
+                  b) ¬∃x C ≡ ∀x ¬C; ¬∀y D ≡ ∃y ¬D; ¬(xy ≥ 0) ≡ xy &lt; 0 ⇒ ∀x ∃y
+                  (xy &lt; 0).
+                </p>
+                <p>c) ¬∀x (P ∨ Q) ≡ ∃x ¬(P ∨ Q) ≡ ∃x (¬P ∧ ¬Q).</p>
+                <p>
+                  d) ¬∃x E ≡ ∀x ¬E; ¬∀y (R → S) ≡ ∃y ¬(¬R ∨ S) ≡ ∃y (R ∧ ¬S) ⇒
+                  ∀x ∃y (R(x,y) ∧ ¬S(y)).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="exercise-list" id="week-2-exercises">
+            <!-- Ejercicio 1: Operaciones con conjuntos -->
+            <h2>CONJUNTOS</h2>
+            <h2>Ejercicios de la Semana 2 y sus Soluciones</h2>
+            <!-- Ejercicio 1: Identificación de conjuntos -->
+            <div class="exercise-item">
+              <h3>1.1 Identificación de conjuntos</h3>
+              <h4>Ejercicio 01</h4>
+              <p>
+                Determine si los siguientes conjuntos son vacíos, finitos o
+                infinitos:
+              </p>
+              <ul>
+                <li>a) {2n + 1 | n ∈ N}</li>
+                <li>b) {x ∈ Q | x ⩾ 0 and x ⩽ 0}</li>
+                <li>c) {x ∈ Z | x² = 4}</li>
+                <li>d) {x ∈ R | x² + 5x + 6 = 0}</li>
+                <li>e) {x ∈ N | x < 10}</li>
+                <li>f) {n ∈ N | n es primo}</li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>a)</strong> El conjunto de números de la forma 2n+1 (n
+                  ∈ N) es el conjunto de números impares, el cual es
+                  <em>infinito</em>.
+                </p>
+                <p>
+                  <strong>b)</strong> La condición x ⩾ 0 and x ⩽ 0 implica que x
+                  = 0; por tanto, el conjunto es {0} y es <em>finito</em>.
+                </p>
+                <p>
+                  <strong>c)</strong> La ecuación x² = 4 tiene dos soluciones en
+                  Z: x = 2 y x = -2; el conjunto es <em>{2, -2}</em> y es
+                  <em>finito</em>.
+                </p>
+                <p>
+                  <strong>d)</strong> La ecuación x² + 5x + 6 = 0 se factoriza
+                  como (x+2)(x+3)=0; las soluciones son x = -2 y x = -3, por lo
+                  que el conjunto es <em>{-2, -3}</em> y es <em>finito</em>.
+                </p>
+                <p>
+                  <strong>e)</strong> El conjunto de naturales menores a 10 es
+                  <em>{1, 2, ..., 9}</em> (o {0,1,...,9} según la definición de
+                  N) y es <em>finito</em>.
+                </p>
+                <p>
+                  <strong>f)</strong> Se conoce que existen infinitos números
+                  primos, así que el conjunto es <em>infinito</em>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 2: Operaciones con conjuntos -->
+            <div class="exercise-item">
+              <h3>1.2 Operaciones con conjuntos</h3>
+              <h4>Ejercicio 02</h4>
+              <p>Sean:</p>
+              <ul>
+                <li>
+                  A = {n ∈ N | 2 ⩽ n ⩽ 20 y n es primo} → A = {2, 3, 5, 7, 11,
+                  13, 17, 19}
+                </li>
+                <li>B = {n ∈ N | n es par} (conjunto <em>infinito</em>)</li>
+                <li>
+                  C = {n ∈ N | n es un múltiplo de 3} (conjunto
+                  <em>infinito</em>)
+                </li>
+              </ul>
+              <p>Realice lo siguiente:</p>
+              <ul>
+                <li>a) Calcule la unión A ∪ B ∪ C.</li>
+                <li>b) Calcule la intersección A ∩ B ∩ C.</li>
+                <li>c) Calcule la diferencia A − (B ∪ C).</li>
+                <li>
+                  d) Calcule la diferencia simétrica A∆B y luego determine (A∆B)
+                  ∩ C.
+                </li>
+                <li>e) Determine la cardinalidad de cada conjunto obtenido.</li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>a)</strong> Dado que B y C son infinitos, la unión A ∪
+                  B ∪ C es <em>infinita</em>.
+                </p>
+                <p>
+                  <strong>b)</strong> La intersección de A (primos) con B
+                  (pares) y C (múltiplos de 3): el único candidato en A que
+                  podría ser par es el 2, pero 2 no es múltiplo de 3, por lo
+                  tanto, A ∩ B ∩ C = <em>∅</em>.
+                </p>
+                <p>
+                  <strong>c)</strong> A − (B ∪ C) consiste en los elementos de A
+                  que no son ni pares ni múltiplos de 3. De A =
+                  {2,3,5,7,11,13,17,19}, eliminamos 2 (par) y 3 (múltiplo de 3):
+                  Quedan <em>{5, 7, 11, 13, 17, 19}</em> (6 elementos).
+                </p>
+                <p>
+                  <strong>d)</strong> La diferencia simétrica A∆B se define como
+                  (A ∪ B) − (A ∩ B).
+                  <br />
+                  - A - B = {primos impares de A} = {3, 5, 7, 11, 13, 17,
+                  19}.<br />
+                  - B - A = Conjunto de números pares que no están en A.
+                  <br />Por lo tanto, A∆B es <em>infinito</em> y al
+                  intersectarlo con C (múltiplos de 3) se obtiene un conjunto
+                  <em>infinito</em>.
+                </p>
+                <p>
+                  <strong>e)</strong> Cardinalidades: <br />- |A| = 8. <br />-
+                  |B| = infinito. <br />- |C| = infinito. <br />- |A ∪ B ∪ C| =
+                  infinito. <br />- |A ∩ B ∩ C| = 0. <br />- |A − (B ∪ C)| = 6.
+                  <br />- |A∆B| y |(A∆B) ∩ C| son infinitos.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 3: Subconjuntos y complementos -->
+            <div class="exercise-item">
+              <h3>1.3 Subconjuntos y complementos</h3>
+              <h4>Ejercicio 03</h4>
+              <p>
+                Sea el conjunto universal U = {a, b, c, d, e, f, g, h}, y sean A
+                = {a, c, e, g} y B = {b, d, f, g, h}.
+              </p>
+              <p>Realice lo siguiente:</p>
+              <ul>
+                <li>a) Demuestre que A ⊆ U y B ⊆ U.</li>
+                <li>b) Calcule la unión A ∪ B y la intersección A ∩ B.</li>
+                <li>
+                  c) Determine el complemento de A respecto a U, es decir, U −
+                  A.
+                </li>
+                <li>d) Verifique si A ∩ (U − A) = ∅ y explique por qué.</li>
+                <li>e) Calcule la cardinalidad de A, B y de U.</li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  a) Por definición de subconjunto, <em>A ⊆ U</em> y
+                  <em>B ⊆ U</em> son verdaderos.
+                </p>
+                <p>
+                  b) A ∪ B = {a, b, c, d, e, f, g, h} (es el conjunto universal
+                  U) y A ∩ B = {g}.
+                </p>
+                <p>
+                  c) El complemento de A respecto a U es U − A = {b, d, f, h}.
+                </p>
+                <p>
+                  d) Dado que A y U − A no tienen elementos en común, se cumple
+                  que A ∩ (U − A) = ∅.
+                </p>
+                <p>e) |A| = 4, |B| = 5 y |U| = 8.</p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 4: Conjuntos definidos por comprensión -->
+            <div class="exercise-item">
+              <h3>1.4 Conjuntos definidos por comprensión</h3>
+              <h4>Ejercicio 04</h4>
+              <p>Sea X = {x ∈ Z | −5 ⩽ x ⩽ 9} y Y = {x ∈ X | x² < 54}.</p>
+              <p>Realice lo siguiente:</p>
+              <ul>
+                <li>a) Escriba Y en notación por extensión.</li>
+                <li>b) Calcule la cardinalidad de Y.</li>
+                <li>c) Calcule Y ∩ {x ∈ Z | x > 0} y Y − {0}.</li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  X = {−5, −4, −3, −2, −1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9} (15
+                  elementos).
+                </p>
+                <p>
+                  Para Y: x² < 54 ⟹ |x| < √54 ≈ 7.35. Como X está acotado de −5
+                  a 9, Y = {x ∈ X | x ≤ 7} = {−5, −4, −3, −2, −1, 0, 1, 2, 3, 4,
+                  5, 6, 7} (13 elementos).
+                </p>
+                <p>
+                  a) Notación por extensión: Y = {−5, −4, −3, −2, −1, 0, 1, 2,
+                  3, 4, 5, 6, 7}.
+                </p>
+                <p>b) |Y| = 13.</p>
+                <p>
+                  c) Y ∩ {x ∈ Z | x > 0} = {1, 2, 3, 4, 5, 6, 7} y Y − {0} =
+                  {−5, −4, −3, −2, −1, 1, 2, 3, 4, 5, 6, 7}.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 5: Producto cartesiano y conjunto potencia -->
+            <div class="exercise-item">
+              <h3>1.5 Producto cartesiano y conjunto potencia</h3>
+              <h4>Ejercicio 05</h4>
+              <p>Sean A = {1, 2, 3} y B = {a, b, c}.</p>
+              <p>Realice lo siguiente:</p>
+              <ul>
+                <li>a) Calcule el producto cartesiano A × B.</li>
+                <li>b) Determine el conjunto potencia P(A).</li>
+                <li>c) ¿Cuál es la cardinalidad de P(A)?</li>
+                <li>
+                  d) Calcule P(A × B) y discuta brevemente la diferencia con
+                  P(A) × P(B).
+                </li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  a) A × B = { (1, a), (1, b), (1, c), (2, a), (2, b), (2, c),
+                  (3, a), (3, b), (3, c) }.
+                </p>
+                <p>
+                  b) P(A) = { ∅, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3} }.
+                </p>
+                <p>c) |P(A)| = 2³ = 8.</p>
+                <p>
+                  d) P(A × B) es el conjunto de todas las partes del conjunto A
+                  × B y tiene 2⁹ = 512 elementos, mientras que P(A) × P(B) es el
+                  producto cartesiano de los conjuntos potencia de A y B. Dado
+                  que |P(A)| = 8 y |P(B)| = 2³ = 8, |P(A) × P(B)| = 8 × 8 = 64.
+                  Por tanto, P(A × B) y P(A) × P(B) son conjuntos
+                  fundamentalmente diferentes en su estructura y cardinalidad.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 6: Intervalos y subconjuntos en R -->
+            <div class="exercise-item">
+              <h3>1.6 Intervalos y subconjuntos en R</h3>
+              <h4>Ejercicio 06</h4>
+              <p>
+                Sean los siguientes intervalos en R: A = [1, 5], B = (4, 12], C
+                = [6, 10).
+              </p>
+              <p>Realice lo siguiente:</p>
+              <ul>
+                <li>
+                  a) Exprese A ∪ B y A ∩ B en notación de intervalos,
+                  justificando su respuesta.
+                </li>
+                <li>
+                  b) Calcule A − C y B − A y represéntelos en notación de
+                  intervalos o por extensión.
+                </li>
+                <li>
+                  c) Determine si A ⊆ B o B ⊆ A, y explique su razonamiento.
+                </li>
+                <li>
+                  d) Compare la relación de A y C en términos de subconjuntos y
+                  discuta si C es un subconjunto propio de A.
+                </li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  a) La unión A ∪ B = [1, 12] ya que A cubre [1, 5] y B cubre
+                  (4, 12]. La intersección A ∩ B es (4, 5] (números mayores que
+                  4 y hasta 5, inclusive 5).
+                </p>
+                <p>
+                  b) A − C = [1, 5] ya que C = [6, 10) no interfiere con A; B −
+                  A = (5, 12] (números de B que son mayores que 5).
+                </p>
+                <p>
+                  c) A no es subconjunto de B, ya que A incluye números (por
+                  ejemplo, 1, 2, 3, 4) que no están en B; de igual forma, B no
+                  es subconjunto de A porque B incluye números mayores que 5.
+                </p>
+                <p>
+                  d) A y C son disjuntos (no tienen elementos en común); por lo
+                  tanto, C no es un subconjunto (ni propio) de A.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 7: Equipos en las Olimpiadas -->
+            <div class="exercise-item">
+              <h3>1.7 Equipos en las Olimpiadas</h3>
+              <h4>Ejercicio 07</h4>
+              <p>
+                En las Olimpiadas de la Facultad de FISI, los estudiantes se
+                dividieron en tres equipos según su lenguaje de programación
+                preferido:
+              </p>
+              <ul>
+                <li>R: Equipo Ruby</li>
+                <li>P: Equipo Python</li>
+                <li>J: Equipo Java</li>
+              </ul>
+              <p>Se observó lo siguiente:</p>
+              <ul>
+                <li>
+                  1. Todo estudiante que participa en Ruby también pertenece a
+                  al menos uno de los otros dos equipos.
+                </li>
+                <li>
+                  2. Algunos estudiantes solo participan en el equipo de Java.
+                </li>
+                <li>
+                  3. Existen estudiantes que pertenecen simultáneamente a los
+                  tres equipos.
+                </li>
+                <li>
+                  4. Ningún estudiante está únicamente en el equipo de Ruby.
+                </li>
+              </ul>
+              <p>Con esta información, determine:</p>
+              <ul>
+                <li>
+                  a) ¿Qué conjuntos nunca pueden estar vacíos? Justifique su
+                  respuesta.
+                </li>
+                <li>
+                  b) Exprese en notación de conjuntos la condición de que
+                  "ningún estudiante está solo en Ruby".
+                </li>
+                <li>
+                  c) Si hay 6 estudiantes en los tres equipos, 10 en Java pero
+                  no en Python, y 4 solo en Python, represente estos datos en un
+                  diagrama de Venn (describa brevemente la distribución).
+                </li>
+              </ul>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  a) Por lo observado, el conjunto de estudiantes que participan
+                  en Ruby junto a (P ∪ J) nunca es vacío, y además, el conjunto
+                  de estudiantes que participan en los tres equipos (R ∩ P ∩ J)
+                  tampoco es vacío.
+                </p>
+                <p>
+                  b) La condición "ningún estudiante está solo en Ruby" se
+                  expresa como: R ⊆ (P ∪ J).
+                </p>
+                <p>
+                  c) Una posible representación en el diagrama de Venn sería:
+                </p>
+                <ul>
+                  <li>
+                    La intersección de los tres equipos (R ∩ P ∩ J) contiene 6
+                    estudiantes.
+                  </li>
+                  <li>
+                    En Java, fuera de la intersección con Python, hay 10
+                    estudiantes.
+                  </li>
+                  <li>Exclusivamente en Python, hay 4 estudiantes.</li>
+                </ul>
+                <p>
+                  Se debe considerar que estos datos indican que, además,
+                  existen estudiantes que solo pertenecen a Java (por la
+                  observación 2) y que la totalidad de R está contenida en la
+                  unión P ∪ J (observación 4).
+                </p>
+              </div>
+            </div>
+            <!-- Otros ejercicios para la Semana 2 -->
+          </div>
+          <div class="exercise-list" id="week-3-exercises">
+            <h2>Conteo y Análisis Combinatorio</h2>
+            <h2>Ejercicios de la Tarea III y sus Soluciones</h2>
+
+            <!-- Ejercicio 1: Principio Aditivo y Multiplicativo -->
+            <div class="exercise-item">
+              <h3>1.1 Principio Aditivo y Multiplicativo</h3>
+              <h4>Ejercicio 01</h4>
+              <p>
+                La cafetería "Sabor y Salud" ha lanzado dos menús innovadores
+                para sorprender a sus clientes:
+              </p>
+              <ul>
+                <li>
+                  <strong>Menú Vegetariano:</strong> 3 opciones de ensalada, 2
+                  opciones de plato principal y 2 postres artesanales.
+                </li>
+                <li>
+                  <strong>Menú No Vegetariano:</strong> 4 opciones de ensalada,
+                  3 opciones de plato principal y 3 postres caseros.
+                </li>
+              </ul>
+              <p>
+                Además, durante esta semana, la cafetería obsequia una bebida
+                gratuita con cada menú; el cliente puede escoger entre 2
+                opciones (té helado o limonada).
+              </p>
+              <ol type="a">
+                <li>
+                  Determine, usando el principio multiplicativo, el número de
+                  combinaciones posibles para cada menú (sin contar la bebida).
+                </li>
+                <li>
+                  Incorpore la bebida a cada menú y calcule el número de
+                  combinaciones totales.
+                </li>
+                <li>
+                  Usando el principio aditivo, determine el total de
+                  combinaciones posibles si un cliente puede elegir cualquiera
+                  de los dos menús ya con la bebida incluida.
+                </li>
+              </ol>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>a)</strong> Número de combinaciones sin bebida:
+                  <br />- Vegetariano: <span class="math">3 × 2 × 2 = 12</span>.
+                  <br />- No Vegetariano:
+                  <span class="math">4 × 3 × 3 = 36</span>.
+                </p>
+                <p>
+                  <strong>b)</strong> Incorporando la bebida (2 opciones):
+                  <br />- Vegetariano con bebida:
+                  <span class="math">12 × 2 = 24</span>. <br />- No Vegetariano
+                  con bebida: <span class="math">36 × 2 = 72</span>.
+                </p>
+                <p>
+                  <strong>c)</strong> Total combinaciones:
+                  <span class="math">24 + 72 = 96</span>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 2: Permutaciones y Combinatoria -->
+            <div class="exercise-item">
+              <h3>1.2 Permutaciones y Combinatoria</h3>
+              <h4>Ejercicio 02</h4>
+              <p>Considere la palabra <strong>PROBABILIDAD</strong>.</p>
+              <ol type="1">
+                <li>
+                  Calcule el número de arreglos (palabras distintas) que se
+                  pueden formar con todas sus letras.
+                </li>
+                <li>
+                  ¿Cuántos de estos arreglos comienzan y terminan con una vocal?
+                </li>
+              </ol>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  La palabra tiene 13 letras con las siguientes repeticiones:
+                  B(2), A(2), I(2), D(3).
+                </p>
+                <p>
+                  <strong>1)</strong> Número total de arreglos:
+                  <span class="math">
+                    \(\frac{13!}{2! \times 2! \times 2! \times 3!} =
+                    \frac{6{,}227{,}020{,}800}{96} = 64{,}864{,}800\) </span
+                  >.
+                </p>
+                <p>
+                  <strong>2)</strong> Vocales disponibles: A, A, I, I (4 en
+                  total, con repeticiones de A e I).<br />
+                  - Número de maneras de colocar dos vocales en los extremos
+                  (considerando repeticiones): 6.<br />
+                  - Permutaciones de las 11 letras restantes con repeticiones
+                  ajustadas:
+                  <span class="math">
+                    \(\frac{11!}{2! \times 2! \times 3!} =
+                    \frac{39{,}916{,}800}{24} = 1{,}663{,}200\) </span
+                  >.<br />
+                  Total:
+                  <span class="math">
+                    \(6 \times 1{,}663{,}200 = 9{,}979{,}200\) </span
+                  >.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 3: Números de cinco cifras -->
+            <div class="exercise-item">
+              <h3>1.2 Permutaciones y Combinatoria</h3>
+              <h4>Ejercicio 03</h4>
+              <p>
+                ¿Cuántos números de cinco cifras pueden formarse con los dígitos
+                0,1,...,7 si:
+              </p>
+              <ol type="a">
+                <li>Los dígitos pueden repetirse.</li>
+                <li>Los dígitos no pueden repetirse.</li>
+                <li>
+                  El último dígito debe ser cero y los dígitos no pueden
+                  repetirse.
+                </li>
+              </ol>
+              <div class="solution">
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  La palabra tiene 13 letras con las siguientes repeticiones: B(2), A(2), I(2), D(3).
+                </p>
+                <p>
+                  <strong>1)</strong> Número total de arreglos:<br />
+                  \( \frac{13!}{2! \times 2! \times 2! \times 3!} = \frac{6{,}227{,}020{,}800}{96} = 64{,}864{,}800 \)
+                </p>
+                <p>
+                  <strong>2)</strong> Vocales disponibles: A, A, I, I (4 en total, con repeticiones de A e I).<br />
+                  - Número de maneras de colocar dos vocales en los extremos (considerando repeticiones): 6.<br />
+                  - Permutaciones de las 11 letras restantes con repeticiones ajustadas:<br />
+                  \( \frac{11!}{2! \times 2! \times 3!} = \frac{39{,}916{,}800}{24} = 1{,}663{,}200 \)<br />
+                  - Total: \( 6 \times 1{,}663{,}200 = 9{,}979{,}200 \)
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 4: Probabilidad sin reemplazo -->
+            <div class="exercise-item">
+              <h3>1.2 Permutaciones y Combinatoria</h3>
+              <h4>Ejercicio 04</h4>
+              <p>
+                Urna con 5 bolas rojas, 4 azules y 3 verdes. Se extraen 2 bolas
+                sin reemplazo.
+              </p>
+              <ol type="a">
+                <li>Probabilidad de que ambas bolas sean rojas.</li>
+                <li>Probabilidad de que al menos una sea azul.</li>
+              </ol>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>Total de pares: \( \binom{12}{2} = 66 \)</p>
+                <p>
+                  <strong>a)</strong><br />
+                  \( \frac{\binom{5}{2}}{\binom{12}{2}} = \frac{10}{66} =
+                  \frac{5}{33} \approx 0.15 \) (15%).
+                </p>
+                <p>
+                  <strong>b)</strong><br />
+                  P(al menos una azul) = 1 − P(ninguna azul)<br />
+                  \( = 1 - \frac{\binom{8}{2}}{66} = 1 - \frac{28}{66} =
+                  \frac{38}{66} = \frac{19}{33} \approx 0.58 \) (58%).
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 5: Probabilidades de electores -->
+            <div class="exercise-item">
+              <h3>1.3 Probabilidades</h3>
+              <h4>Ejercicio 05</h4>
+              <p>
+                En un distrito limeño, el 10% de los electores no apoyan la
+                vacancia, el 30% no están afiliados y el 1% cumplen ambas.
+              </p>
+              <ol type="a">
+                <li>Afiliado a algún partido.</li>
+                <li>Afiliado y a favor de la vacancia.</li>
+                <li>No afiliado o no a favor de la vacancia.</li>
+              </ol>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  Definiciones: P(no vacancia) = 0.10; P(no afiliado) = 0.30;
+                  P(ambos) = 0.01.
+                </p>
+                <p><strong>a)</strong> Afiliado = 1 − 0.30 = 0.70 (70%).</p>
+                <p>
+                  <strong>b)</strong> P(a favor ∩ afiliado) = P(a favor) − P(no
+                  afiliado ∩ a favor) = 0.90 − (0.30−0.01) = 0.61 (61%).
+                </p>
+                <p>
+                  <strong>c)</strong> P(no afiliado ∪ no vacancia) = 0.30 + 0.10
+                  − 0.01 = 0.39 (39%).
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 6: Comités de profesionales -->
+            <div class="exercise-item">
+              <h3>1.3 Probabilidades</h3>
+              <h4>Ejercicio 06</h4>
+              <p>
+                Con 7 ingenieros y 4 médicos se forman comités de 6
+                profesionales.
+              </p>
+              <ol type="a">
+                <li>Probabilidad de incluir exactamente 2 médicos.</li>
+                <li>Probabilidad de incluir al menos 2 ingenieros.</li>
+                <li>Probabilidad de incluir como máximo 3 ingenieros.</li>
+              </ol>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  Total de comités: \( \binom{11}{6} = 462 \)
+                </p>
+                <p>
+                  <strong>a)</strong><br />
+                  \( \frac{\binom{4}{2} \cdot \binom{7}{4}}{\binom{11}{6}} = \frac{6 \cdot 35}{462} = \frac{210}{462} \approx 0.45 \) (45%).
+                </p>
+                <p>
+                  <strong>b)</strong><br />
+                  Al menos 2 ingenieros: con máximo 4 médicos, cualquier comité de 6 tendrá al menos 2 ingenieros.<br />
+                  Entonces, \( P = 1 \) (100%).
+                </p>
+                <p>
+                  <strong>c)</strong><br />
+                  A lo sumo 3 ingenieros:<br />
+                  - Para 2 ingenieros: \( \binom{7}{2} \cdot \binom{4}{4} = 21 \cdot 1 = 21 \)<br />
+                  - Para 3 ingenieros: \( \binom{7}{3} \cdot \binom{4}{3} = 35 \cdot 4 = 140 \)<br />
+                  Total favorable: \( 21 + 140 = 161 \)<br />
+                  Probabilidad: \( \frac{161}{462} \approx 0.35 \) (35%)
+                </p>
+              </div>
+            </div>
+
+            <!-- Ejercicio 7: Piedra plateada -->
+            <div class="exercise-item">
+              <h3>1.3 Probabilidades</h3>
+              <h4>Ejercicio 07</h4>
+              <p>Tres divisiones con piedras plomas y plateadas:</p>
+              <ul>
+                <li>División 1: 2 plomas, 3 plateadas.</li>
+                <li>División 2: 4 plomas, 2 plateadas.</li>
+                <li>División 3: 5 plomas, 5 plateadas.</li>
+              </ul>
+              <p>
+                Se elige al azar una división y luego una piedra. ¿Cuál es la
+                probabilidad de que la piedra sea plateada?
+              </p>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  Por la ley de la probabilidad total:<br />
+                  \( P(\text{plateada}) = \frac{1}{3} \left( \frac{3}{5} + \frac{2}{6} + \frac{5}{10} \right) \)<br />
+                  \( = \frac{1}{3} (0.60 + 0.33 + 0.50) = \frac{43}{90} \approx 0.48 \) (48%).
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Aquí puedes agregar más semanas con su respectivo contenido -->
+        </section>
+      </main>
     </div>
 
     <a href="chatbot.html" class="float-button">💬</a>
 
-  <script>
+    <script>
       // Función para alternar entre las semanas
-      document.addEventListener('DOMContentLoaded', () => {
-          const weekLinks = document.querySelectorAll('.week-link');
+      document.addEventListener("DOMContentLoaded", () => {
+        const weekLinks = document.querySelectorAll(".week-link");
 
-          function showExercises(weekNumber) {
-              // Ocultar todos los ejercicios
-              document.querySelectorAll('.exercise-list').forEach(list => {
-                  list.style.display = 'none';
-              });
-
-              // Mostrar los ejercicios de la semana seleccionada
-              const weekExercises = document.getElementById(`week-${weekNumber}-exercises`);
-              if (weekExercises) {
-                  weekExercises.style.display = 'block';
-              }
-          }
-
-          // Agregar evento a los enlaces de las semanas
-          weekLinks.forEach(link => {
-              link.addEventListener('click', (e) => {
-                  e.preventDefault();
-
-                  // Obtener el número de semana desde el enlace
-                  const weekNumber = link.textContent.match(/\d+/)[0]; // Esto extrae el número de la semana (Ej: "Semana 1")
-
-                  // Llamar a la función para mostrar los ejercicios de esa semana
-                  showExercises(weekNumber);
-
-                  // Cambiar la clase "active" en el enlace
-                  weekLinks.forEach(l => l.classList.remove('active'));
-                  link.classList.add('active');
-              });
+        function showExercises(weekNumber) {
+          // Ocultar todos los ejercicios
+          document.querySelectorAll(".exercise-list").forEach((list) => {
+            list.style.display = "none";
           });
 
-          // Inicializar con los ejercicios de la semana 1 por defecto
-          showExercises(1);
+          // Mostrar los ejercicios de la semana seleccionada
+          const weekExercises = document.getElementById(
+            `week-${weekNumber}-exercises`,
+          );
+          if (weekExercises) {
+            weekExercises.style.display = "block";
+          }
+        }
+
+        // Agregar evento a los enlaces de las semanas
+        weekLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            // Obtener el número de semana desde el enlace
+            const weekNumber = link.textContent.match(/\d+/)[0]; // Esto extrae el número de la semana (Ej: "Semana 1")
+
+            // Llamar a la función para mostrar los ejercicios de esa semana
+            showExercises(weekNumber);
+
+            // Cambiar la clase "active" en el enlace
+            weekLinks.forEach((l) => l.classList.remove("active"));
+            link.classList.add("active");
+          });
+        });
+
+        // Inicializar con los ejercicios de la semana 1 por defecto
+        showExercises(1);
       });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
