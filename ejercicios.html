@@ -1863,142 +1863,144 @@ print(invertir_cadena("recursión"))  # Salida: nóisrucer
                 <li>Encuentre dominio, codominio y rango.</li>
                 <li>Determine si es inyectiva y sobreyectiva.</li>
               </ol>
-
-              <div class="solution">
-                <h5>Solución:</h5>
-
-                <!-- Paso 1: Gráfico -->
-                <p><strong>1) Gráfico por tramos:</strong></p>
-                <ul>
-                  <li>
-                    <em>Para <code>x &lt; −1</code>:</em>
-                    <br />– <code>y=2x+1</code>; – límite en
-                    <code>x→−1−</code> es <code>−1</code>; – extiende hacia
-                    <code>(−∞,−1)</code>.
-                  </li>
-                  <li>
-                    <em>Para <code>−1 &lt; x &lt; 1</code>:</em>
-                    <br />– <code>y=3</code> constante; – intervalo abierto en
-                    extremos (<code>−1,1</code>).
-                  </li>
-                  <li>
-                    <em>Para <code>x ≥ 1</code>:</em>
-                    <br />– <code>y=−x+2</code>; – en <code>x=1</code> vale
-                    <code>1</code>; – extiende hacia <code>(−∞,1]</code>.
-                  </li>
-                </ul>
-                <figure class="solution-figure">
-                  <img
-                    src="assets/img/ejercicio_semana6_funcion.png"
-                    alt="Gráfico de la función por tramos"
-                    class="responsive-img"
-                  />
-                  <figcaption>
-                    Puntos abiertos en (−1,−1), (−1,3) y (1,3); cerrado en
-                    (1,1).
-                  </figcaption>
-                </figure>
-
-                <!-- Paso 2: Dominio, codominio y rango -->
-                <p><strong>2) Dominio, codominio y rango:</strong></p>
-                <ul>
-                  <li><strong>Dominio:</strong> ℝ∖{−1}.</li>
-                  <li><strong>Codominio:</strong> ℝ.</li>
-                  <li>
-                    <strong>Rango:</strong>
-                    <br />– rama izquierda → <code>(−∞,−1)</code> – tramo medio
-                    → <code>{3}</code> – rama derecha → <code>(−∞,1]</code> ⇒
-                    <code>(−∞,1]∪{3}</code>.
-                  </li>
-                </ul>
-
-                <!-- Paso 3: Inyectividad y sobreyectividad -->
-                <p><strong>3) Inyectividad y sobreyectividad:</strong></p>
-                <ul>
-                  <li>
-                    <strong>No inyectiva:</strong>
-                    varios x en (−1,1) dan f(x)=3.
-                  </li>
-                  <li>
-                    <strong>No sobreyectiva (sobre ℝ):</strong>
-                    no alcanza valores en (1,3) ni >3.
-                  </li>
-                </ul>
-              </div>
             </div>
 
+            <div class="solution">
+              <h5>Solución:</h5>
+
+              <!-- Paso 1: Gráfico -->
+              <p><strong>1) Gráfico por tramos:</strong></p>
+              <ul class="steps">
+                <li>
+                  <em>Para <code>x &lt; −1</code>:</em><br />
+                  \[ y = 2x + 1,\quad \lim_{x\to -1^-}y = -1,\quad \text{se
+                  extiende sobre }(-\infty, -1). \]
+                </li>
+                <li>
+                  <em>Para <code>−1 &lt; x &lt; 1</code>:</em><br />
+                  \[ y = 3,\quad \text{constante en }(-1,1)\,\bigl(\text{puntos
+                  }x=-1,1\text{ excluidos}\bigr). \]
+                </li>
+                <li>
+                  <em>Para <code>x \ge 1</code>:</em><br />
+                  \[ y = -x + 2,\quad y(1) = 1,\quad \text{se extiende sobre
+                  }[1,\infty). \]
+                </li>
+              </ul>
+              <p><strong>1) Gráfico por tramos:</strong></p>
+              <div style="text-align: center">
+                <img
+                  src="assets/img/ejercicio_semana6_funcion.png"
+                  alt="Gráfico de la función por tramos"
+                  style="width: 60%; max-width: 400px; height: auto"
+                />
+              </div>
+              <p
+                style="
+                  text-align: center;
+                  font-size: 0.9rem;
+                  color: var(--text-dark);
+                "
+              >
+                Puntos abiertos en (−1,−1), (−1,3), (1,3); cerrado en (1,1).
+              </p>
+
+              <!-- Paso 2: Dominio, codominio y rango -->
+              <p><strong>2) Dominio, codominio y rango:</strong></p>
+              <ul class="steps">
+                <li>
+                  <strong>Dominio:</strong><br />
+                  \(\mathbb{R}\setminus\{-1\}.\)
+                </li>
+                <li>
+                  <strong>Codominio:</strong><br />
+                  \(\mathbb{R}.\)
+                </li>
+                <li>
+                  <strong>Rango:</strong><br />
+                  \[ \text{rama izquierda: }(-\infty,-1),\quad \text{tramo
+                  medio: }\{3\},\quad \text{rama derecha: }(-\infty,1]
+                  \;\Longrightarrow\;(-\infty,1]\cup\{3\}. \]
+                </li>
+              </ul>
+
+              <!-- Paso 3: Inyectividad y sobreyectividad -->
+              <p><strong>3) Inyectividad y sobreyectividad:</strong></p>
+              <ul class="steps">
+                <li>
+                  <strong>No inyectiva:</strong><br />
+                  Varios \(x\in(-1,1)\) comparten \(f(x)=3\).
+                </li>
+                <li>
+                  <strong>No sobreyectiva (sobre \(\mathbb{R}\)):</strong><br />
+                  No alcanza valores en \((1,3)\) ni \(>3\).
+                </li>
+              </ul>
+            </div>
             <!-- Ejercicio 6.2 -->
             <div class="exercise-item">
               <h3>6.2 Dominio e imagen</h3>
               <h4>Ejercicio 02</h4>
-              <p>Determine dominio e imagen de:</p>
-              <ol type="a">
-                <li>f(x) = 1/(x−3)</li>
-                <li>f(x) = √(x−2)</li>
-                <li>f(x) = (x²−9)/(x−3)</li>
-              </ol>
+              <p>Determine dominio e imagen de las siguientes funciones:</p>
 
               <div class="solution">
                 <h5>Solución:</h5>
 
                 <!-- a) -->
-                <p><strong>a) f(x)=1/(x−3)</strong></p>
-                <ol>
+                <p><strong>a) \(f(x) = \frac{1}{x - 3}\)</strong></p>
+                <ul>
                   <li>
-                    <strong>Dominio:</strong>
-                    El denominador no puede ser cero, por lo que
-                    <code>x−3≠0 ⇒ x≠3</code>. ⇒ <code>Dom(f) = ℝ∖{3}</code>.
+                    <strong>Dominio:</strong><br />
+                    \[x-3 \neq 0 \;\Longrightarrow\; x\neq
+                    3\quad\Longrightarrow\quad
+                    \mathrm{Dom}(f)=\mathbb{R}\setminus\{3\}.\]
                   </li>
                   <li>
-                    <strong>Imagen:</strong>
-                    Sea <code>y=1/(x−3)</code>. Entonces <code>x−3 = 1/y</code>,
-                    y sólo falla si <code>y=0</code> (no existe
-                    <code>x</code> que anule el numerador manteniendo
-                    denominador ≠0). ⇒ <code>Im(f) = ℝ∖{0}</code>.
+                    <strong>Imagen:</strong><br />
+                    Sea \(y=\tfrac{1}{x-3}\). Entonces \(x-3 = 1/y\), que falla
+                    solo si \(y=0\).
+                    \[\mathrm{Im}(f)=\mathbb{R}\setminus\{0\}.\]
                   </li>
-                </ol>
+                </ul>
 
                 <!-- b) -->
-                <p><strong>b) f(x)=√(x−2)</strong></p>
-                <ol>
+                <p><strong>b) \(f(x) = \sqrt{x - 2}\)</strong></p>
+                <ul>
                   <li>
-                    <strong>Dominio:</strong>
-                    La expresión bajo raíz debe ser ≥0:
-                    <code>x−2 ≥ 0 ⇒ x ≥ 2</code>. ⇒ <code>Dom(f) = [2,∞)</code>.
+                    <strong>Dominio:</strong><br />
+                    Bajo raíz \(\ge0\): \[x - 2 \ge 0 \;\Longrightarrow\;
+                    x\ge2\quad\Longrightarrow\quad \mathrm{Dom}(f)=[2,\infty).\]
                   </li>
                   <li>
-                    <strong>Imagen:</strong>
-                    La raíz cuadrada de cualquier ≥0 es ≥0; cuando
-                    <code>x=2</code>, <code>f(2)=0</code>; al crecer
-                    <code>x</code>, <code>√(x−2)</code> recorre todos los
-                    valores no negativos. ⇒ <code>Im(f) = [0,∞)</code>.
+                    <strong>Imagen:</strong><br />
+                    La función raíz produce valores \(\ge0\).
+                    \[\mathrm{Im}(f)=[0,\infty).\]
                   </li>
-                </ol>
+                </ul>
 
                 <!-- c) -->
-                <p><strong>c) f(x)=(x²−9)/(x−3)</strong></p>
-                <ol>
+                <p><strong>c) \(f(x) = \dfrac{x^2 - 9}{x - 3}\)</strong></p>
+                <ul>
                   <li>
-                    Factorice el numerador:
-                    <code>x²−9 = (x−3)(x+3)</code>.
+                    <strong>Factorización:</strong><br />
+                    \(x^2-9=(x-3)(x+3)\).
                   </li>
                   <li>
-                    Simplifique siempre que <code>x≠3</code>:
-                    <code>f(x) = (x−3)(x+3)/(x−3) = x+3</code>, con la
-                    restricción inicial <code>x≠3</code>.
+                    <strong>Simplificación:</strong><br />
+                    Para \(x\neq3\): \[f(x)=\frac{(x-3)(x+3)}{x-3}=x+3.\]
                   </li>
                   <li>
-                    <strong>Dominio:</strong> todo <code>x</code> salvo
-                    <code>3</code> ⇒ <code>Dom(f) = ℝ∖{3}</code>.
+                    <strong>Dominio:</strong><br />
+                    Excluye \(x=3\).
+                    \[\mathrm{Dom}(f)=\mathbb{R}\setminus\{3\}.\]
                   </li>
                   <li>
-                    <strong>Imagen:</strong> la función simplificada
-                    <code>y=x+3</code> recorre ℝ, excepto el valor que
-                    correspondería a <code>x=3</code>, es decir
-                    <code>3+3=6</code>, que no se alcanza porque
-                    <code>x≠3</code>. ⇒ <code>Im(f) = ℝ∖{6}</code>.
+                    <strong>Imagen:</strong><br />
+                    La recta \(y=x+3\) recorre \(\mathbb{R}\), salvo el valor
+                    \(6\) (correspondiente a \(x=3\) prohibido).
+                    \[\mathrm{Im}(f)=\mathbb{R}\setminus\{6\}.\]
                   </li>
-                </ol>
+                </ul>
               </div>
             </div>
 

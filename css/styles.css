@@ -641,3 +641,17 @@ h2 {
 .solution ul {
   padding-left: 1.5rem;
 }
+
+/* Añádelo a tu CSS */
+.solution-figure {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem 0; /* separación vertical */
+}
+
+.responsive-img {
+  max-width: 60%; /* o el ancho que prefieras */
+  height: auto;
+  margin: 0 auto; /* por si Flexbox falla */
+}
