@@ -61,8 +61,8 @@
       <main class="main-content">
         <section class="exercises-section">
           <div class="exercise-list" id="week-1-exercises">
-            <h2>Lógica Proposicional</h2>
-            <h2>Ejercicios de la Tarea I y sus Soluciones</h2>
+            <h2>LÓGICA PROPOSICIONAL</h2>
+            <h2>Ejercicios de la Tarea 1 y sus Soluciones</h2>
 
             <!-- Ejercicio 1.1.1 -->
             <div class="exercise-item">
@@ -768,8 +768,8 @@
             <!-- Otros ejercicios para la Semana 2 -->
           </div>
           <div class="exercise-list" id="week-3-exercises">
-            <h2>Conteo y Análisis Combinatorio</h2>
-            <h2>Ejercicios de la Tarea III y sus Soluciones</h2>
+            <h2>CONTEO Y ANÁLISIS COMBINATORIO</h2>
+            <h2>Ejercicios de la Tarea 3 y sus Soluciones</h2>
 
             <!-- Ejercicio 1: Principio Aditivo y Multiplicativo -->
             <div class="exercise-item">
@@ -1046,7 +1046,7 @@
           </div>
 
           <div class="exercise-list" id="week-4-exercises">
-            <h2>Relaciones</h2>
+            <h2>RELACIONES</h2>
             <h2>Ejercicios de la Semana 4 y sus Soluciones</h2>
 
             <!-- Tarea IV1.1 Propiedades de las relaciones -->
@@ -1336,7 +1336,8 @@
           </div>
 
           <div class="exercise-list" id="week-5-exercises">
-            <h2>Semana 5: Recursión</h2>
+            <h2>RECURSIÓN</h2>
+            <h2>Semana 5:</h2>
             <div class="exercise-item">
               <h3>5.1 Ejercicio – Factorial</h3>
               <h4>Ejercicio 01</h4>
@@ -1424,41 +1425,99 @@ print(invertir_cadena("recursión"))  # Salida: nóisrucer
           </div>
 
           <div class="exercise-list" id="week-6-exercises">
-            <h2>Semana 6: Funciones</h2>
-            <h3>Ejercicios de la Semana 5 y sus Soluciones</h3>
+            <h2>FUNCIONES</h2>
+            <h2>Ejercicios de la Semana 6 y sus Soluciones</h2>
 
+            <!-- Ejercicio 6.1 -->
             <div class="exercise-item">
-              <h3>6.1 Propiedades de f</h3>
+              <h3>6.1 Propiedades de <em>f</em></h3>
               <h4>Ejercicio 01</h4>
               <p>
-                Considere la función <strong>f: ℝ − {−1} → ℝ</strong> definida
-                por:
+                Considere la función
+                <strong>f: ℝ − {−1} → ℝ</strong> definida por:
               </p>
-              <pre><code>f(x) = {
-  2x + 1   si x &lt; −1,
-  3        si −1 &lt; x &lt; 1,
-  −x + 2   si x ≥ 1
-}</code></pre>
+              <p>
+                \[ f(x) = \begin{cases} 2x + 1, & x < -1,\\ 3, & -1 < x < 1,\\
+                -x + 2, & x \ge 1. \end{cases} \]
+              </p>
               <ol>
-                <li>Represente el gráfico de f.</li>
+                <li>Represente el gráfico de <em>f</em>.</li>
                 <li>Encuentre dominio, codominio y rango.</li>
                 <li>Determine si es inyectiva y sobreyectiva.</li>
               </ol>
+
               <div class="solution">
                 <h5>Solución:</h5>
-                <p>
-                  <strong>1)</strong> Gráfico a trozos: recta (pendiente 2,
-                  ordenada 1) para x&lt;−1; línea horizontal y=3 en (−1,1);
-                  recta (pendiente −1, ordenada 2) para x≥1.
-                </p>
-                <p>
-                  <strong>2)</strong> Dominio: ℝ − {−1}. Codominio: ℝ. Rango:
-                  (−∞,−1) ∪ {3} ∪ [1,∞).
-                </p>
-                <p><strong>3)</strong> No es inyectiva ni sobreyectiva.</p>
+
+                <!-- Paso 1: Gráfico -->
+                <p><strong>1) Gráfico por tramos:</strong></p>
+                <ul>
+                  <li>
+                    <em>Para <code>x &lt; −1</code>:</em>
+                    <br />– <code>y=2x+1</code>; – límite en
+                    <code>x→−1−</code> es <code>−1</code>; – extiende hacia
+                    <code>(−∞,−1)</code>.
+                  </li>
+                  <li>
+                    <em>Para <code>−1 &lt; x &lt; 1</code>:</em>
+                    <br />– <code>y=3</code> constante; – intervalo abierto en
+                    extremos (<code>−1,1</code>).
+                  </li>
+                  <li>
+                    <em>Para <code>x ≥ 1</code>:</em>
+                    <br />– <code>y=−x+2</code>; – en <code>x=1</code> vale
+                    <code>1</code>; – extiende hacia <code>(−∞,1]</code>.
+                  </li>
+                </ul>
+                <figure class="solution-figure">
+                  <img
+                    src="assets/img/ejercicio_semana6_funcion.png"
+                    alt="Gráfico de la función por tramos"
+                    class="responsive-img"
+                  />
+                  <figcaption>
+                    Puntos abiertos en (−1,−1), (−1,3) y (1,3); cerrado en
+                    (1,1).
+                  </figcaption>
+                </figure>
+
+                <!-- Paso 2: Dominio, codominio y rango -->
+                <p><strong>2) Dominio, codominio y rango:</strong></p>
+                <ul>
+                  <li><strong>Dominio:</strong> ℝ∖{−1}.</li>
+                  <li><strong>Codominio:</strong> ℝ.</li>
+                  <li>
+                    <strong>Rango:</strong>
+                    <br />– rama izquierda → <code>(−∞,−1)</code> – tramo medio
+                    → <code>{3}</code> – rama derecha → <code>(−∞,1]</code> ⇒
+                    <code>(−∞,1]∪{3}</code>.
+                  </li>
+                </ul>
+
+                <!-- Paso 3: Inyectividad y sobreyectividad -->
+                <p><strong>3) Inyectividad y sobreyectividad:</strong></p>
+                <ul>
+                  <li>
+                    <strong>No inyectiva:</strong>
+                    varios x en (−1,1) dan f(x)=3.
+                  </li>
+                  <li>
+                    <strong>No sobreyectiva (sobre ℝ):</strong>
+                    no alcanza valores en (1,3) ni >3.
+                  </li>
+                </ul>
               </div>
             </div>
 
+            <style>
+              /* Añadir esto a tu CSS existente */
+              .solution ol,
+              .solution ul {
+                padding-left: 1.5rem; /* Más espacio desde la izquierda */
+              }
+            </style>
+
+            <!-- Ejercicio 6.2 -->
             <div class="exercise-item">
               <h3>6.2 Dominio e imagen</h3>
               <h4>Ejercicio 02</h4>
@@ -1468,59 +1527,204 @@ print(invertir_cadena("recursión"))  # Salida: nóisrucer
                 <li>f(x) = √(x−2)</li>
                 <li>f(x) = (x²−9)/(x−3)</li>
               </ol>
+
               <div class="solution">
                 <h5>Solución:</h5>
-                <p><strong>a)</strong> Dominio: ℝ − {3}. Imagen: ℝ − {0}.</p>
-                <p><strong>b)</strong> Dominio: [2,∞). Imagen: [0,∞).</p>
-                <p>
-                  <strong>c)</strong> Simplifica a x+3 (x≠3). Dominio: ℝ − {3}.
-                  Imagen: ℝ − {6}.
-                </p>
+
+                <!-- a) -->
+                <p><strong>a) f(x)=1/(x−3)</strong></p>
+                <ol>
+                  <li>
+                    <strong>Dominio:</strong>
+                    El denominador no puede ser cero, por lo que
+                    <code>x−3≠0 ⇒ x≠3</code>. ⇒ <code>Dom(f) = ℝ∖{3}</code>.
+                  </li>
+                  <li>
+                    <strong>Imagen:</strong>
+                    Sea <code>y=1/(x−3)</code>. Entonces <code>x−3 = 1/y</code>,
+                    y sólo falla si <code>y=0</code> (no existe
+                    <code>x</code> que anule el numerador manteniendo
+                    denominador ≠0). ⇒ <code>Im(f) = ℝ∖{0}</code>.
+                  </li>
+                </ol>
+
+                <!-- b) -->
+                <p><strong>b) f(x)=√(x−2)</strong></p>
+                <ol>
+                  <li>
+                    <strong>Dominio:</strong>
+                    La expresión bajo raíz debe ser ≥0:
+                    <code>x−2 ≥ 0 ⇒ x ≥ 2</code>. ⇒ <code>Dom(f) = [2,∞)</code>.
+                  </li>
+                  <li>
+                    <strong>Imagen:</strong>
+                    La raíz cuadrada de cualquier ≥0 es ≥0; cuando
+                    <code>x=2</code>, <code>f(2)=0</code>; al crecer
+                    <code>x</code>, <code>√(x−2)</code> recorre todos los
+                    valores no negativos. ⇒ <code>Im(f) = [0,∞)</code>.
+                  </li>
+                </ol>
+
+                <!-- c) -->
+                <p><strong>c) f(x)=(x²−9)/(x−3)</strong></p>
+                <ol>
+                  <li>
+                    Factorice el numerador:
+                    <code>x²−9 = (x−3)(x+3)</code>.
+                  </li>
+                  <li>
+                    Simplifique siempre que <code>x≠3</code>:
+                    <code>f(x) = (x−3)(x+3)/(x−3) = x+3</code>, con la
+                    restricción inicial <code>x≠3</code>.
+                  </li>
+                  <li>
+                    <strong>Dominio:</strong> todo <code>x</code> salvo
+                    <code>3</code> ⇒ <code>Dom(f) = ℝ∖{3}</code>.
+                  </li>
+                  <li>
+                    <strong>Imagen:</strong> la función simplificada
+                    <code>y=x+3</code> recorre ℝ, excepto el valor que
+                    correspondería a <code>x=3</code>, es decir
+                    <code>3+3=6</code>, que no se alcanza porque
+                    <code>x≠3</code>. ⇒ <code>Im(f) = ℝ∖{6}</code>.
+                  </li>
+                </ol>
               </div>
             </div>
 
+            <!-- Ejercicio 6.3 -->
             <div class="exercise-item">
               <h3>6.3 Composición y operaciones</h3>
               <h4>Ejercicio 03</h4>
-              <p>Sean f(x)=3x+5 y g(x)=x−4. Determine y represente:</p>
+              <p>
+                Sean <code>f(x)=3x+5</code> y <code>g(x)=x−4</code>. Determine y
+                represente:
+              </p>
               <ol>
                 <li>f+g, f−g, f·g, f/g</li>
                 <li>f ∘ g y g ∘ f</li>
               </ol>
               <div class="solution">
                 <h5>Solución:</h5>
+
+                <!-- 1) Operaciones -->
+                <p><strong>1) Operaciones aritméticas:</strong></p>
                 <ul>
-                  <li>f+g = 4x+1</li>
-                  <li>f−g = 2x+9</li>
-                  <li>f·g = 3x²−7x−20</li>
-                  <li>f/g = (3x+5)/(x−4)</li>
-                  <li>f ∘ g = 3x−7</li>
-                  <li>g ∘ f = 3x+1</li>
+                  <li>
+                    <strong>Suma:</strong>
+                    \[ (f+g)(x) = (3x+5) + (x−4) = 4x + 1. \]
+                  </li>
+                  <li>
+                    <strong>Resta:</strong>
+                    \[ (f−g)(x) = (3x+5) − (x−4) = 2x + 9. \]
+                  </li>
+                  <li>
+                    <strong>Producto:</strong>
+                    \[ (f \cdot g)(x) = (3x+5)(x−4) = 3x^2 −12x +5x −20 = 3x^2
+                    −7x −20. \]
+                  </li>
+                  <li>
+                    <strong>Cociente:</strong>
+                    \[ \left(\frac{f}{g}\right)(x) = \frac{3x+5}{\,x−4\,}, \quad
+                    Dom = ℝ∖\{4\}. \]
+                  </li>
+                </ul>
+
+                <!-- 2) Composición -->
+                <p><strong>2) Composición de funciones:</strong></p>
+                <ul>
+                  <li>
+                    <strong>f ∘ g:</strong>
+                    \[ (f∘g)(x) = f\bigl(g(x)\bigr) = 3(x−4) + 5 = 3x −12 +5 =
+                    3x −7. \]
+                  </li>
+                  <li>
+                    <strong>g ∘ f:</strong>
+                    \[ (g∘f)(x) = g\bigl(f(x)\bigr) = (3x+5) − 4 = 3x +1. \]
+                  </li>
                 </ul>
               </div>
             </div>
-
+            <!-- Ejercicio 6.4 -->
             <div class="exercise-item">
-              <h3>6.4 Inversa de f</h3>
+              <h3>6.4 Inversa de <em>f</em></h3>
               <h4>Ejercicio 04</h4>
-              <p>f(x)=8x³−5. Sea g tal que (f ∘ g)(x)=35−8x. Determine g(x).</p>
+              <p>
+                Sea <code>f(x)=8x³−5</code>. Buscamos <code>g</code> tal que
+                <code>(f ∘ g)(x)=35−8x</code>. Determine <code>g(x)</code>.
+              </p>
               <div class="solution">
                 <h5>Solución:</h5>
-                <p>8[g(x)]³−5 = 35−8x ⇒ [g(x)]³ = 5−x ⇒ g(x) = ∛(5−x).</p>
+                <ol>
+                  <li>
+                    <strong>Defina la composición:</strong>
+                    \[ (f\circ g)(x) = f\bigl(g(x)\bigr) = 8\bigl(g(x)\bigr)^3 -
+                    5. \]
+                  </li>
+                  <li>
+                    <strong>Iguale al objetivo:</strong>
+                    \[ 8\bigl(g(x)\bigr)^3 - 5 \;=\; 35 - 8x. \]
+                  </li>
+                  <li>
+                    <strong>Despeje la parte cúbica:</strong>
+                    \[ 8\bigl(g(x)\bigr)^3 = 35 - 8x + 5 = 40 - 8x
+                    \quad\Longrightarrow\quad \bigl(g(x)\bigr)^3 = 5 - x. \]
+                  </li>
+                  <li>
+                    <strong>Extraiga la raíz cúbica:</strong>
+                    \[ g(x) = \sqrt[3]{\,5 - x\,}. \]
+                  </li>
+                  <li>
+                    <strong>Verificación rápida:</strong>
+                    Sustituimos en la composición original para comprobar que \[
+                    8\bigl(\sqrt[3]{5-x}\bigr)^3 - 5 = 8(5 - x) - 5 = 40 - 8x -
+                    5 = 35 - 8x, \] que coincide con lo pedido.
+                  </li>
+                </ol>
               </div>
             </div>
 
+            <!-- Ejercicio 6.5 (sin cambios, ya estaba bien) -->
             <div class="exercise-item">
               <h3>6.5 Función cuadrática</h3>
               <h4>Ejercicio 05</h4>
-              <p>Encuentre f(x)=ax²+bx+c tal que f(3)=0, f(−5)=0, f(−1)=12.</p>
+              <p>
+                Encuentre <code>f(x)=ax²+bx+c</code> tal que
+                <code>f(3)=0</code>, <code>f(−5)=0</code>,
+                <code>f(−1)=12</code>.
+              </p>
               <div class="solution">
                 <h5>Solución:</h5>
-                <p>a=−¾, b=−3/2, c=45/4 ⇒ f(x)=−¾x²−3/2x+45/4.</p>
+                <ol>
+                  <li>
+                    Plantee el sistema:
+                    <br />
+                    \[ \begin{cases} 9a + 3b + c = 0,\\ 25a - 5b + c = 0,\\ a -
+                    b + c = 12. \end{cases} \]
+                  </li>
+                  <li>
+                    Reste ecuaciones para eliminar <em>c</em>:
+                    <br />
+                    (1)−(2): \(-16a + 8b = 0 \implies b = 2a\). (1)−(3): \(8a +
+                    4b = -12 \implies 8a + 4(2a) = -12 \implies a =
+                    -\tfrac{3}{4}.\)
+                  </li>
+                  <li>\(b = 2a = -\tfrac{3}{2}.\)</li>
+                  <li>
+                    Sustituya para despejar <em>c</em>:
+                    <br />
+                    \[ 9\Bigl(-\tfrac{3}{4}\Bigr) + 3\Bigl(-\tfrac{3}{2}\Bigr) +
+                    c = 0 \;\Longrightarrow\; c = \tfrac{45}{4}. \]
+                  </li>
+                  <li>
+                    <strong>Resultado final:</strong>
+                    \[ f(x) = -\tfrac{3}{4}x^2 - \tfrac{3}{2}x + \tfrac{45}{4}.
+                    \]
+                  </li>
+                </ol>
               </div>
             </div>
           </div>
-
           <script
             id="MathJax-script"
             async
