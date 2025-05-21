@@ -47,6 +47,12 @@
             <li class="week-item">
               <a href="#" class="week-link">Semana 4</a>
             </li>
+            <li class="week-item">
+              <a href="#" class="week-link">Semana 5</a>
+            </li>
+            <li class="week-item">
+              <a href="#" class="week-link">Semana 6</a>
+            </li>
             <!-- Más semanas pueden ser añadidas aquí -->
           </ul>
         </nav>
@@ -887,20 +893,25 @@
                 </li>
               </ol>
               <div class="solution">
-              <div class="solution">
                 <h5>Solución:</h5>
                 <p>
-                  La palabra tiene 13 letras con las siguientes repeticiones: B(2), A(2), I(2), D(3).
+                  La palabra tiene 13 letras con las siguientes repeticiones:
+                  B(2), A(2), I(2), D(3).
                 </p>
                 <p>
                   <strong>1)</strong> Número total de arreglos:<br />
-                  \( \frac{13!}{2! \times 2! \times 2! \times 3!} = \frac{6{,}227{,}020{,}800}{96} = 64{,}864{,}800 \)
+                  \( \frac{13!}{2! \times 2! \times 2! \times 3!} =
+                  \frac{6{,}227{,}020{,}800}{96} = 64{,}864{,}800 \)
                 </p>
                 <p>
-                  <strong>2)</strong> Vocales disponibles: A, A, I, I (4 en total, con repeticiones de A e I).<br />
-                  - Número de maneras de colocar dos vocales en los extremos (considerando repeticiones): 6.<br />
-                  - Permutaciones de las 11 letras restantes con repeticiones ajustadas:<br />
-                  \( \frac{11!}{2! \times 2! \times 3!} = \frac{39{,}916{,}800}{24} = 1{,}663{,}200 \)<br />
+                  <strong>2)</strong> Vocales disponibles: A, A, I, I (4 en
+                  total, con repeticiones de A e I).<br />
+                  - Número de maneras de colocar dos vocales en los extremos
+                  (considerando repeticiones): 6.<br />
+                  - Permutaciones de las 11 letras restantes con repeticiones
+                  ajustadas:<br />
+                  \( \frac{11!}{2! \times 2! \times 3!} =
+                  \frac{39{,}916{,}800}{24} = 1{,}663{,}200 \)<br />
                   - Total: \( 6 \times 1{,}663{,}200 = 9{,}979{,}200 \)
                 </p>
               </div>
@@ -981,23 +992,26 @@
               </ol>
               <div class="solution">
                 <h5>Solución:</h5>
-                <p>
-                  Total de comités: \( \binom{11}{6} = 462 \)
-                </p>
+                <p>Total de comités: \( \binom{11}{6} = 462 \)</p>
                 <p>
                   <strong>a)</strong><br />
-                  \( \frac{\binom{4}{2} \cdot \binom{7}{4}}{\binom{11}{6}} = \frac{6 \cdot 35}{462} = \frac{210}{462} \approx 0.45 \) (45%).
+                  \( \frac{\binom{4}{2} \cdot \binom{7}{4}}{\binom{11}{6}} =
+                  \frac{6 \cdot 35}{462} = \frac{210}{462} \approx 0.45 \)
+                  (45%).
                 </p>
                 <p>
                   <strong>b)</strong><br />
-                  Al menos 2 ingenieros: con máximo 4 médicos, cualquier comité de 6 tendrá al menos 2 ingenieros.<br />
+                  Al menos 2 ingenieros: con máximo 4 médicos, cualquier comité
+                  de 6 tendrá al menos 2 ingenieros.<br />
                   Entonces, \( P = 1 \) (100%).
                 </p>
                 <p>
                   <strong>c)</strong><br />
                   A lo sumo 3 ingenieros:<br />
-                  - Para 2 ingenieros: \( \binom{7}{2} \cdot \binom{4}{4} = 21 \cdot 1 = 21 \)<br />
-                  - Para 3 ingenieros: \( \binom{7}{3} \cdot \binom{4}{3} = 35 \cdot 4 = 140 \)<br />
+                  - Para 2 ingenieros: \( \binom{7}{2} \cdot \binom{4}{4} = 21
+                  \cdot 1 = 21 \)<br />
+                  - Para 3 ingenieros: \( \binom{7}{3} \cdot \binom{4}{3} = 35
+                  \cdot 4 = 140 \)<br />
                   Total favorable: \( 21 + 140 = 161 \)<br />
                   Probabilidad: \( \frac{161}{462} \approx 0.35 \) (35%)
                 </p>
@@ -1022,12 +1036,496 @@
                 <h5>Solución:</h5>
                 <p>
                   Por la ley de la probabilidad total:<br />
-                  \( P(\text{plateada}) = \frac{1}{3} \left( \frac{3}{5} + \frac{2}{6} + \frac{5}{10} \right) \)<br />
-                  \( = \frac{1}{3} (0.60 + 0.33 + 0.50) = \frac{43}{90} \approx 0.48 \) (48%).
+                  \( P(\text{plateada}) = \frac{1}{3} \left( \frac{3}{5} +
+                  \frac{2}{6} + \frac{5}{10} \right) \)<br />
+                  \( = \frac{1}{3} (0.60 + 0.33 + 0.50) = \frac{43}{90} \approx
+                  0.48 \) (48%).
                 </p>
               </div>
             </div>
           </div>
+
+          <div class="exercise-list" id="week-4-exercises">
+            <h2>Relaciones</h2>
+            <h2>Ejercicios de la Semana 4 y sus Soluciones</h2>
+
+            <!-- Tarea IV1.1 Propiedades de las relaciones -->
+            <div class="exercise-item">
+              <h3>1.1 Propiedades de las relaciones</h3>
+              <h4>Ejercicio 01</h4>
+              <p>
+                Sea el conjunto <strong>A = {1, 2, 3, 4, 5}</strong> y la
+                relación <strong>R</strong> definida sobre A:<br />
+                R = {(1, 1), (1, 3), (2, 2), (2, 4), (3, 1), (3, 3), (4, 2), (4,
+                4), (5, 5)}<br />
+                Determine si la relación R cumple con las siguientes
+                propiedades:<br />
+                1. Reflexiva<br />
+                2. Simétrica<br />
+                3. Transitiva<br />
+                Justifique su respuesta en cada caso.
+              </p>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>Reflexiva:</strong> Sí, porque para todo <em>a</em> en
+                  A existen los pares (a, a) para a = 1,2,3,4,5.
+                </p>
+                <p>
+                  <strong>Simétrica:</strong> Sí, pues cada par (a, b) en R
+                  cumple que (b, a) también está en R:<br />
+                  - (1,3) y (3,1)<br />
+                  - (2,4) y (4,2)
+                </p>
+                <p>
+                  <strong>Transitiva:</strong> Sí, porque siempre que (a, b) y
+                  (b, c) pertenecen a R, el par (a, c) también lo hace.
+                  Ejemplo:<br />
+                  - De (1,3) y (3,1) se obtiene (1,1).
+                </p>
+              </div>
+            </div>
+
+            <div class="exercise-item">
+              <h3>1.1 Propiedades de las relaciones</h3>
+              <h4>Ejercicio 02</h4>
+              <p>
+                Sea la relación <strong>R</strong> sobre los enteros definida
+                por: <br />
+                (<em>a</em>, <em>b</em>) ∈ R ⇔ <em>a</em> ≥ <em>b</em>.<br />
+                Demuestre si R cumple las siguientes propiedades:<br />
+                1. Reflexividad<br />
+                2. Antisimetría<br />
+                3. Transitividad
+              </p>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>Reflexividad:</strong> Sí, porque todo entero
+                  <em>a</em> satisface <em>a</em> ≥ <em>a</em>.
+                </p>
+                <p>
+                  <strong>Antisimetría:</strong> Sí, si <em>a</em> ≥
+                  <em>b</em> y <em>b</em> ≥ <em>a</em>, entonces <em>a</em> =
+                  <em>b</em>.
+                </p>
+                <p>
+                  <strong>Transitividad:</strong> Sí, dado <em>a</em> ≥
+                  <em>b</em> y <em>b</em> ≥ <em>c</em>, se cumple <em>a</em> ≥
+                  <em>c</em>.
+                </p>
+              </div>
+            </div>
+
+            <!-- 1.2 Relaciones de Equivalencia -->
+            <div class="exercise-item">
+              <h3>1.2 Relaciones de Equivalencia</h3>
+              <h4>Ejercicio 03</h4>
+              <p>
+                Sea <strong>A = {−3, −1, 0, 1, 3}</strong> y la relación
+                <strong>R</strong> sobre A definida por:<br />
+                (<em>x</em>, <em>y</em>) ∈ R ⇔ |<em>x</em>| = |<em>y</em>|.<br />
+                1. Determine si R es reflexiva, simétrica y transitiva.<br />
+                2. ¿Es una relación de equivalencia?<br />
+                3. Obtenga las clases de equivalencia.<br />
+                4. Escriba el conjunto cociente A/R.
+              </p>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>Reflexiva:</strong> Sí, |x| = |x| para todo x en A.<br />
+                  <strong>Simétrica:</strong> Sí, si |x| = |y| entonces |y| =
+                  |x|.<br />
+                  <strong>Transitiva:</strong> Sí, si |x| = |y| y |y| = |z|,
+                  entonces |x| = |z|.
+                </p>
+                <p>
+                  <strong>¿Es equivalencia?:</strong> Sí, cumple las tres
+                  propiedades.
+                </p>
+                <p>
+                  <strong>Clases de equivalencia:</strong><br />
+                  - [0] = {0}<br />
+                  - [1] = {1, −1}<br />
+                  - [3] = {3, −3}
+                </p>
+                <p>
+                  <strong>Conjunto cociente A/R:</strong> { {0}, {1, −1}, {3,
+                  −3} }
+                </p>
+              </div>
+            </div>
+            <div class="exercise-item">
+              <h3>1.2 Relaciones de Equivalencia</h3>
+              <h4>Ejercicio 04</h4>
+              <p>
+                Demostrar que la relación <strong>R</strong>, definida en
+                <strong>{1,2,3,4,5}</strong> y dada por la figura es de
+                equivalencia:
+              </p>
+              <div style="text-align: center">
+                <img
+                  src="assets/img/ejercicio_semana04_graph.png"
+                  alt="Gráfico de la función"
+                  style="width: 60%; max-width: 400px; height: auto"
+                />
+              </div>
+
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>Reflexiva:</strong> Cada nodo tiene un lazo
+                  (1,2,3,4,5), por lo que para todo a en A, (a,a) ∈ R.
+                </p>
+                <p>
+                  <strong>Simétrica:</strong> Cada flecha bidireccional en el
+                  diagrama indica que si (a,b) ∈ R entonces (b,a) ∈ R.
+                </p>
+                <p>
+                  <strong>Transitiva:</strong> Los subconjuntos {1,5} y {2,3,4}
+                  están completamente conectados; si aRb y bRc con a,b,c en la
+                  misma clase, entonces también aRc.
+                </p>
+                <p>
+                  <strong>Conclusión:</strong> R es reflexiva, simétrica y
+                  transitiva, por lo que es una relación de equivalencia.
+                </p>
+                <p>
+                  <strong>Clases de equivalencia:</strong><br />
+                  [1] = {1, 5}<br />
+                  [2] = {2, 3, 4}
+                </p>
+                <p>
+                  <strong>Conjunto cociente A/R:</strong> { {1, 5}, {2, 3, 4} }
+                </p>
+              </div>
+            </div>
+            <div class="exercise-item">
+              <h3>1.3 Cerraduras y Representación Matricial</h3>
+              <h4>Ejercicio 05</h4>
+              <p>
+                Dado el conjunto <strong>A = {1, 2, 3, 4}</strong> y la relación
+                <strong>R</strong> = {(1,2),(2,3),(3,4),(2,1)}:
+              </p>
+              <ol type="1">
+                <li>
+                  Escriba la matriz <em>M<sub>R</sub></em> que representa la
+                  relación.
+                </li>
+                <li>
+                  Determine la cerradura reflexiva de R y su representación
+                  matricial.
+                </li>
+                <li>
+                  Determine la cerradura simétrica de R y su representación
+                  matricial.
+                </li>
+                <li>Determine la cerradura transitiva de R.</li>
+              </ol>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>1)</strong> Matriz <em>M<sub>R</sub></em> (filas y
+                  columnas 1–4):<br />
+                  [ [0,1,0,0],<br />
+                  [1,0,1,0],<br />
+                  [0,0,0,1],<br />
+                  [0,0,0,0] ]
+                </p>
+                <p>
+                  <strong>2)</strong> Cerradura reflexiva: R ∪
+                  {(1,1),(2,2),(3,3),(4,4)}.<br />
+                  Matriz: diagonal de 1's:<br />
+                  [ [1,1,0,0], [1,1,1,0], [0,0,1,1], [0,0,0,1] ]
+                </p>
+                <p>
+                  <strong>3)</strong> Cerradura simétrica: R ∪ R<sup>-1</sup> =
+                  {(1,2),(2,1),(2,3),(3,2),(3,4),(4,3)}.<br />
+                  Matriz simétrica:<br />
+                  [ [0,1,0,0], [1,0,1,0], [0,1,0,1], [0,0,1,0] ]
+                </p>
+                <p>
+                  <strong>4)</strong> Cerradura transitiva añade
+                  (1,3),(2,4),(1,4):<br />
+                  R<sup>*</sup> = R ∪ {(1,3),(1,4),(2,4)}.
+                </p>
+              </div>
+            </div>
+
+            <div class="exercise-item">
+              <h3>1.3 Cerraduras y Representación Matricial</h3>
+              <h4>Ejercicio 06</h4>
+              <p>
+                Sea <strong>A = {1, 2, 3}</strong> y
+                <strong>B = {a, b, c, d}</strong>. La relación
+                <strong>R</strong> está dada por:<br />
+                R = {(1,a),(1,b),(2,a),(2,c),(3,c),(3,d)}
+              </p>
+              <ol type="1">
+                <li>Construya la matriz de la relación R.</li>
+                <li>
+                  Construya la matriz de la relación inversa R<sup>−1</sup>.
+                </li>
+                <li>Determine si R<sup>−1</sup> es una función.</li>
+              </ol>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>1)</strong> Matriz R (filas 1–3, columnas a–d):<br />
+                  [ [1,1,0,0], [1,0,1,0], [0,0,1,1] ]
+                </p>
+                <p>
+                  <strong>2)</strong> Matriz R<sup>−1</sup> (filas a–d, columnas
+                  1–3):<br />
+                  [ [1,1,0], [1,0,0], [0,1,1], [0,0,1] ]
+                </p>
+                <p>
+                  <strong>3)</strong> R<sup>−1</sup> no es función porque, por
+                  ejemplo, el elemento 'a' se asocia a 1 y 2 (dos imágenes).
+                </p>
+              </div>
+            </div>
+
+            <div class="exercise-item">
+              <h3>1.4 Composición</h3>
+              <h4>Ejercicio 07</h4>
+              <p>
+                Sean las relaciones <strong>R<sub>1</sub></strong> y
+                <strong>R<sub>2</sub></strong> definidas en
+                <strong>A = {1,2,3,4,5,6}</strong> por:
+              </p>
+              <p>
+                R<sub>1</sub> =
+                {(1,1),(1,3),(1,2),(2,4),(3,5),(4,5),(5,2),(6,6)}<br />
+                R<sub>2</sub> = {(1,4),(2,3),(2,6),(3,6),(4,1),(5,3),(6,2)}
+              </p>
+              <ol type="1">
+                <li>
+                  Determine R<sub>1</sub> ◦ R<sub>2</sub> y R<sub>2</sub> ◦
+                  R<sub>1</sub>.
+                </li>
+                <li>
+                  Represente matricialmente M<sub>R1</sub>, M<sub>R2</sub>,
+                  M<sub>R1◦R2</sub> y M<sub>R2◦R1</sub>.
+                </li>
+              </ol>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>1)</strong> Composición:<br />
+                  R<sub>1</sub> ◦ R<sub>2</sub> = {(x,z): ∃y, (x,y)∈R<sub
+                    >2</sub
+                  >
+                  y (y,z)∈R<sub>1</sub>} =
+                  {(1,1),(1,3),(1,2),(2,5),(2,2),(3,5),(3,2),(4,1),(5,5),(5,3),(6,6)}<br />
+                  R<sub>2</sub> ◦ R<sub>1</sub> = {(x,z): ∃y, (x,y)∈R<sub
+                    >1</sub
+                  >
+                  y (y,z)∈R<sub>2</sub>} =
+                  {(1,4),(1,6),(2,1),(3,3),(3,6),(4,1),(5,3),(6,2)}
+                </p>
+                <p>
+                  <strong>2)</strong> Matrices (filas/columnas 1–6):<br />
+                  M<sub>R1</sub> = see above,<br />
+                  M<sub>R2</sub> = see above,<br />
+                  M<sub>R1◦R2</sub> = see above,<br />
+                  M<sub>R2◦R1</sub> = see above.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="exercise-list" id="week-5-exercises">
+            <h2>Semana 5: Recursión</h2>
+            <div class="exercise-item">
+              <h3>5.1 Ejercicio – Factorial</h3>
+              <h4>Ejercicio 01</h4>
+              <p>
+                Implementa una función recursiva que calcule el factorial de un
+                número entero positivo <code>n</code>.
+              </p>
+              <pre><code>def factorial(n):
+  if n == 0 or n == 1:
+    return 1
+  return n * factorial(n - 1)
+
+# Ejemplo
+enprint(factorial(5))  # Salida: 120
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>5.2 Ejercicio – Serie de Fibonacci</h3>
+              <h4>Ejercicio 02</h4>
+              <p>
+                Implementa una función recursiva que devuelva el
+                <code>n</code>-ésimo término de la serie de Fibonacci.
+              </p>
+              <pre><code>def fibonacci(n):
+  if n <= 1:
+    return n
+  return fibonacci(n - 1) + fibonacci(n - 2)
+
+# Ejemplo
+print(fibonacci(6))  # Salida: 8
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>5.3 Ejercicio – Suma de dígitos</h3>
+              <h4>Ejercicio 03</h4>
+              <p>
+                Crea una función recursiva que calcule la suma de los dígitos de
+                un número entero positivo.
+              </p>
+              <pre><code>def suma_digitos(n):
+  if n < 10:
+    return n
+  return n % 10 + suma_digitos(n // 10)
+
+# Ejemplo
+print(suma_digitos(1234))  # Salida: 10
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>5.4 Ejercicio – Potencia</h3>
+              <h4>Ejercicio 04</h4>
+              <p>
+                Implementa una función recursiva que calcule
+                <code>a^b</code> sin usar operadores de potencia.
+              </p>
+              <pre><code>def potencia(a, b):
+  if b == 0:
+    return 1
+  return a * potencia(a, b - 1)
+
+# Ejemplo
+print(potencia(2, 3))  # Salida: 8
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>5.5 Ejercicio – Invertir una cadena</h3>
+              <h4>Ejercicio 05</h4>
+              <p>
+                Escribe una función recursiva que reciba una cadena y devuelva
+                su reverso.
+              </p>
+              <pre><code>def invertir_cadena(s):
+  if len(s) == 0:
+    return s
+  return s[-1] + invertir_cadena(s[:-1])
+
+# Ejemplo
+print(invertir_cadena("recursión"))  # Salida: nóisrucer
+</code></pre>
+            </div>
+          </div>
+
+          <div class="exercise-list" id="week-6-exercises">
+            <h2>Semana 6: Funciones</h2>
+            <h3>Ejercicios de la Semana 5 y sus Soluciones</h3>
+
+            <div class="exercise-item">
+              <h3>6.1 Propiedades de f</h3>
+              <h4>Ejercicio 01</h4>
+              <p>
+                Considere la función <strong>f: ℝ − {−1} → ℝ</strong> definida
+                por:
+              </p>
+              <pre><code>f(x) = {
+  2x + 1   si x &lt; −1,
+  3        si −1 &lt; x &lt; 1,
+  −x + 2   si x ≥ 1
+}</code></pre>
+              <ol>
+                <li>Represente el gráfico de f.</li>
+                <li>Encuentre dominio, codominio y rango.</li>
+                <li>Determine si es inyectiva y sobreyectiva.</li>
+              </ol>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>
+                  <strong>1)</strong> Gráfico a trozos: recta (pendiente 2,
+                  ordenada 1) para x&lt;−1; línea horizontal y=3 en (−1,1);
+                  recta (pendiente −1, ordenada 2) para x≥1.
+                </p>
+                <p>
+                  <strong>2)</strong> Dominio: ℝ − {−1}. Codominio: ℝ. Rango:
+                  (−∞,−1) ∪ {3} ∪ [1,∞).
+                </p>
+                <p><strong>3)</strong> No es inyectiva ni sobreyectiva.</p>
+              </div>
+            </div>
+
+            <div class="exercise-item">
+              <h3>6.2 Dominio e imagen</h3>
+              <h4>Ejercicio 02</h4>
+              <p>Determine dominio e imagen de:</p>
+              <ol type="a">
+                <li>f(x) = 1/(x−3)</li>
+                <li>f(x) = √(x−2)</li>
+                <li>f(x) = (x²−9)/(x−3)</li>
+              </ol>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p><strong>a)</strong> Dominio: ℝ − {3}. Imagen: ℝ − {0}.</p>
+                <p><strong>b)</strong> Dominio: [2,∞). Imagen: [0,∞).</p>
+                <p>
+                  <strong>c)</strong> Simplifica a x+3 (x≠3). Dominio: ℝ − {3}.
+                  Imagen: ℝ − {6}.
+                </p>
+              </div>
+            </div>
+
+            <div class="exercise-item">
+              <h3>6.3 Composición y operaciones</h3>
+              <h4>Ejercicio 03</h4>
+              <p>Sean f(x)=3x+5 y g(x)=x−4. Determine y represente:</p>
+              <ol>
+                <li>f+g, f−g, f·g, f/g</li>
+                <li>f ∘ g y g ∘ f</li>
+              </ol>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <ul>
+                  <li>f+g = 4x+1</li>
+                  <li>f−g = 2x+9</li>
+                  <li>f·g = 3x²−7x−20</li>
+                  <li>f/g = (3x+5)/(x−4)</li>
+                  <li>f ∘ g = 3x−7</li>
+                  <li>g ∘ f = 3x+1</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="exercise-item">
+              <h3>6.4 Inversa de f</h3>
+              <h4>Ejercicio 04</h4>
+              <p>f(x)=8x³−5. Sea g tal que (f ∘ g)(x)=35−8x. Determine g(x).</p>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>8[g(x)]³−5 = 35−8x ⇒ [g(x)]³ = 5−x ⇒ g(x) = ∛(5−x).</p>
+              </div>
+            </div>
+
+            <div class="exercise-item">
+              <h3>6.5 Función cuadrática</h3>
+              <h4>Ejercicio 05</h4>
+              <p>Encuentre f(x)=ax²+bx+c tal que f(3)=0, f(−5)=0, f(−1)=12.</p>
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>a=−¾, b=−3/2, c=45/4 ⇒ f(x)=−¾x²−3/2x+45/4.</p>
+              </div>
+            </div>
+          </div>
+
+          <script
+            id="MathJax-script"
+            async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+          ></script>
           <!-- Aquí puedes agregar más semanas con su respectivo contenido -->
         </section>
       </main>
