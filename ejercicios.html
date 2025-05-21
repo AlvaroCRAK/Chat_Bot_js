@@ -1143,12 +1143,12 @@
                   <strong>¿Es equivalencia?:</strong> Sí, cumple las tres
                   propiedades.
                 </p>
-                <p>
-                  <strong>Clases de equivalencia:</strong><br />
-                  - [0] = {0}<br />
-                  - [1] = {1, −1}<br />
-                  - [3] = {3, −3}
-                </p>
+                <p><strong>Clases de equivalencia:</strong><br /></p>
+                <ul>
+                  <li>[0] = {0}</li>
+                  <li>[1] = {1, -1}</li>
+                  <li>[3] = {3, -3}</li>
+                </ul>
                 <p>
                   <strong>Conjunto cociente A/R:</strong> { {0}, {1, −1}, {3,
                   −3} }
@@ -1222,33 +1222,161 @@
                 </li>
                 <li>Determine la cerradura transitiva de R.</li>
               </ol>
+
               <div class="solution">
                 <h5>Solución:</h5>
+
+                <!-- 1) Matriz M_R -->
                 <p>
                   <strong>1)</strong> Matriz <em>M<sub>R</sub></em> (filas y
-                  columnas 1–4):<br />
-                  [ [0,1,0,0],<br />
-                  [1,0,1,0],<br />
-                  [0,0,0,1],<br />
-                  [0,0,0,0] ]
+                  columnas 1–4):
                 </p>
+                <figure>
+                  <table class="matrix">
+                    <tbody>
+                      <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">M<sub>R</sub></figcaption>
+                </figure>
+
+                <!-- 2) Cerradura reflexiva -->
                 <p>
-                  <strong>2)</strong> Cerradura reflexiva: R ∪
-                  {(1,1),(2,2),(3,3),(4,4)}.<br />
-                  Matriz: diagonal de 1's:<br />
-                  [ [1,1,0,0], [1,1,1,0], [0,0,1,1], [0,0,0,1] ]
+                  <strong>2)</strong> Cerradura reflexiva:
+                  \(R_{\text{reflexiva}} = R \cup \{(1,1),(2,2),(3,3),(4,4)\}\).
                 </p>
+                <figure>
+                  <table class="matrix">
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">
+                    M<sub>R<em>reflexiva</em></sub>
+                  </figcaption>
+                </figure>
+
+                <!-- 3) Cerradura simétrica -->
                 <p>
-                  <strong>3)</strong> Cerradura simétrica: R ∪ R<sup>-1</sup> =
-                  {(1,2),(2,1),(2,3),(3,2),(3,4),(4,3)}.<br />
-                  Matriz simétrica:<br />
-                  [ [0,1,0,0], [1,0,1,0], [0,1,0,1], [0,0,1,0] ]
+                  <strong>3)</strong> Cerradura simétrica:
+                  \(R_{\text{simétrica}} = R \cup R^{-1}\).
                 </p>
+                <figure>
+                  <table class="matrix">
+                    <tbody>
+                      <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">
+                    M<sub>R<em>simétrica</em></sub>
+                  </figcaption>
+                </figure>
+
+                <!-- 4) Cerradura transitiva -->
                 <p>
-                  <strong>4)</strong> Cerradura transitiva añade
-                  (1,3),(2,4),(1,4):<br />
-                  R<sup>*</sup> = R ∪ {(1,3),(1,4),(2,4)}.
+                  <strong>4)</strong> Cerradura transitiva: \(R^* = R \cup
+                  \{(1,3),(1,4),(2,4)\}\).
                 </p>
+                <figure>
+                  <table class="matrix">
+                    <tbody>
+                      <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">M<sub>R*</sub></figcaption>
+                </figure>
               </div>
             </div>
 
@@ -1268,20 +1396,80 @@
                 </li>
                 <li>Determine si R<sup>−1</sup> es una función.</li>
               </ol>
+
               <div class="solution">
                 <h5>Solución:</h5>
+
                 <p>
-                  <strong>1)</strong> Matriz R (filas 1–3, columnas a–d):<br />
-                  [ [1,1,0,0], [1,0,1,0], [0,0,1,1] ]
+                  <strong>1)</strong> Matriz de \(R\) (filas 1–3, columnas a–d):
                 </p>
+                <figure>
+                  <table class="matrix">
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">
+                    M<sub>R</sub> (3×4)
+                  </figcaption>
+                </figure>
+
                 <p>
-                  <strong>2)</strong> Matriz R<sup>−1</sup> (filas a–d, columnas
-                  1–3):<br />
-                  [ [1,1,0], [1,0,0], [0,1,1], [0,0,1] ]
+                  <strong>2)</strong> Matriz de \(R^{-1}\) (filas a–d, columnas
+                  1–3):
                 </p>
+                <figure>
+                  <table class="matrix">
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">
+                    M<sub>R<sup>−1</sup></sub> (4×3)
+                  </figcaption>
+                </figure>
+
                 <p>
-                  <strong>3)</strong> R<sup>−1</sup> no es función porque, por
-                  ejemplo, el elemento 'a' se asocia a 1 y 2 (dos imágenes).
+                  <strong>3)</strong> \(R^{-1}\) no es función porque, por
+                  ejemplo, la fila “a” tiene dos unos (en columnas 1 y 2), lo
+                  que significa que ‘a’ se relaciona con más de un elemento en
+                  el dominio original.
                 </p>
               </div>
             </div>
@@ -1309,28 +1497,258 @@
                   M<sub>R1◦R2</sub> y M<sub>R2◦R1</sub>.
                 </li>
               </ol>
+
               <div class="solution">
                 <h5>Solución:</h5>
+
+                <p><strong>1)</strong> Composición:</p>
                 <p>
-                  <strong>1)</strong> Composición:<br />
-                  R<sub>1</sub> ◦ R<sub>2</sub> = {(x,z): ∃y, (x,y)∈R<sub
-                    >2</sub
-                  >
-                  y (y,z)∈R<sub>1</sub>} =
-                  {(1,1),(1,3),(1,2),(2,5),(2,2),(3,5),(3,2),(4,1),(5,5),(5,3),(6,6)}<br />
-                  R<sub>2</sub> ◦ R<sub>1</sub> = {(x,z): ∃y, (x,y)∈R<sub
-                    >1</sub
-                  >
-                  y (y,z)∈R<sub>2</sub>} =
-                  {(1,4),(1,6),(2,1),(3,3),(3,6),(4,1),(5,3),(6,2)}
+                  \(R_1 \circ R_2 =
+                  \{(1,1),(1,3),(1,2),(2,5),(2,2),(3,5),(3,2),(4,1),(5,5),(5,3),(6,6)\}\)<br />
+                  \(R_2 \circ R_1 =
+                  \{(1,4),(1,6),(2,1),(3,3),(3,6),(4,1),(5,3),(6,2)\}\)
                 </p>
+
                 <p>
-                  <strong>2)</strong> Matrices (filas/columnas 1–6):<br />
-                  M<sub>R1</sub> = see above,<br />
-                  M<sub>R2</sub> = see above,<br />
-                  M<sub>R1◦R2</sub> = see above,<br />
-                  M<sub>R2◦R1</sub> = see above.
+                  <strong>2)</strong> Representación matricial (filas/columnas
+                  1–6):
                 </p>
+
+                <!-- M_R1 -->
+                <figure>
+                  <table class="matrix">
+                    <tbody>
+                      <!-- Sustituye cada 0/1 según M_R1 -->
+                      <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">M<sub>R1</sub></figcaption>
+                </figure>
+
+                <!-- M_R2 -->
+                <figure>
+                  <table class="matrix">
+                    <tbody>
+                      <!-- Sustituye cada 0/1 según M_R2 -->
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">M<sub>R2</sub></figcaption>
+                </figure>
+
+                <!-- M_R1∘R2 -->
+                <figure>
+                  <table class="matrix">
+                    <tbody>
+                      <!-- Llena según {(1,1),(1,2),(1,3),(2,2),(2,5),(3,2),(3,5),(4,1),(5,3),(5,5),(6,6)} -->
+                      <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">
+                    M<sub>R1◦R2</sub>
+                  </figcaption>
+                </figure>
+
+                <!-- M_R2∘R1 -->
+                <figure>
+                  <table class="matrix">
+                    <tbody>
+                      <!-- Llena según {(1,4),(1,6),(2,1),(3,3),(3,6),(4,1),(5,3),(6,2)} -->
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">
+                    M<sub>R2◦R1</sub>
+                  </figcaption>
+                </figure>
               </div>
             </div>
           </div>
@@ -1508,14 +1926,6 @@ print(invertir_cadena("recursión"))  # Salida: nóisrucer
                 </ul>
               </div>
             </div>
-
-            <style>
-              /* Añadir esto a tu CSS existente */
-              .solution ol,
-              .solution ul {
-                padding-left: 1.5rem; /* Más espacio desde la izquierda */
-              }
-            </style>
 
             <!-- Ejercicio 6.2 -->
             <div class="exercise-item">
