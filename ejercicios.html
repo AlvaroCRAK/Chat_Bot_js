@@ -53,6 +53,12 @@
             <li class="week-item">
               <a href="#" class="week-link">Semana 6</a>
             </li>
+            <li class="week-item">
+              <a href="#" class="week-link">Semana 7</a>
+            </li>
+            <li class="week-item">
+              <a href="#" class="week-link">Semana 9</a>
+            </li>
             <!-- Más semanas pueden ser añadidas aquí -->
           </ul>
         </nav>
@@ -2198,6 +2204,301 @@ print(invertir_cadena("recursión"))  # Salida: nóisrucer
             async
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
           ></script>
+          <div class="exercise-list" id="week-7-exercises">
+            <h2>GRAFOS</h2>
+            <h2>Semana 7</h2>
+
+            <div class="exercise-item">
+              <h3>6.1 Ejercicio – Representación de grafos</h3>
+              <h4>Ejercicio 01</h4>
+              <p>
+                Representación un grafo no dirigido usando listas de adyacencia.
+                Crea una función que reciba una lista de aristas y construya el
+                grafo.
+              </p>
+              <pre><code>def construir_grafo(aristas):
+  grafo = {}
+  for u, v in aristas:
+    grafo.setdefault(u, []).append(v)
+    grafo.setdefault(v, []).append(u)
+  return grafo
+
+# Ejemplo
+aristas = [('A', 'B'), ('A', 'C'), ('B', 'D')]
+grafo = construir_grafo(aristas)
+print(grafo)
+# Salida: {'A': ['B', 'C'], 'B': ['A', 'D'], 'C': ['A'], 'D': ['B']}
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>6.2 Ejercicio – Búsqueda en profundidad (DFS)</h3>
+              <h4>Ejercicio 02</h4>
+              <p>
+                Implementación de una función que recorra un grafo usando DFS
+                (búsqueda en profundidad) e imprima los nodos visitados desde un
+                nodo inicial.
+              </p>
+              <pre><code>def dfs(grafo, nodo, visitado=None):
+  if visitado is None:
+    visitado = set()
+  if nodo not in visitado:
+    print(nodo)
+    visitado.add(nodo)
+    for vecino in grafo[nodo]:
+      dfs(grafo, vecino, visitado)
+
+# Ejemplo
+grafo = {
+  'A': ['B', 'C'],
+  'B': ['A', 'D'],
+  'C': ['A'],
+  'D': ['B']
+}
+dfs(grafo, 'A')
+# Salida esperada: A B D C
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>6.3 Ejercicio – Búsqueda en anchura (BFS)</h3>
+              <h4>Ejercicio 03</h4>
+              <p>
+                Implementación de una función que recorra un grafo usando BFS
+                (búsqueda en anchura) e imprima los nodos en el orden visitado
+                desde un nodo inicial.
+              </p>
+              <pre><code>from collections import deque
+
+def bfs(grafo, inicio):
+  visitado = set([inicio])
+  cola = deque([inicio])
+  while cola:
+    nodo = cola.popleft()
+    print(nodo)
+    for vecino in grafo[nodo]:
+      if vecino not in visitado:
+        visitado.add(vecino)
+        cola.append(vecino)
+
+# Ejemplo
+grafo = {
+  'A': ['B', 'C'],
+  'B': ['A', 'D'],
+  'C': ['A'],
+  'D': ['B']
+}
+bfs(grafo, 'A')
+# Salida esperada: A B C D
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>6.4 Ejercicio – Detección de ciclos en grafo no dirigido</h3>
+              <h4>Ejercicio 04</h4>
+              <p>
+                Implementación de una función que detecte si un grafo no
+                dirigido contiene un ciclo, utilizando DFS.
+              </p>
+              <pre><code>def tiene_ciclo(grafo, nodo, visitado, padre):
+  visitado.add(nodo)
+  for vecino in grafo[nodo]:
+    if vecino not in visitado:
+      if tiene_ciclo(grafo, vecino, visitado, nodo):
+        return True
+    elif vecino != padre:
+      return True
+  return False
+
+# Ejemplo
+grafo = {
+  0: [1, 2],
+  1: [0, 2],
+  2: [0, 1]
+}
+visitado = set()
+print(tiene_ciclo(grafo, 0, visitado, -1))  # Salida: True
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>6.5 Ejercicio – Contar componentes conexas</h3>
+              <h4>Ejercicio 05</h4>
+              <p>
+                Implementación de una función que cuente cuántas componentes
+                conexas tiene un grafo no dirigido.
+              </p>
+              <pre><code>def contar_componentes(grafo):
+  visitado = set()
+  componentes = 0
+
+  def dfs(nodo):
+    visitado.add(nodo)
+    for vecino in grafo[nodo]:
+      if vecino not in visitado:
+        dfs(vecino)
+
+  for nodo in grafo:
+    if nodo not in visitado:
+      dfs(nodo)
+      componentes += 1
+
+  return componentes
+
+# Ejemplo
+grafo = {
+  0: [1],
+  1: [0],
+  2: [3],
+  3: [2],
+  4: []
+}
+print(contar_componentes(grafo))  # Salida: 3
+</code></pre>
+            </div>
+          </div>
+          <div class="exercise-list" id="week-9-exercises">
+            <h2>ÁRBOLES</h2>
+            <h2>Semana 9</h2>
+
+            <div class="exercise-item">
+              <h3>7.1 Ejercicio – Definición de nodo</h3>
+              <h4>Ejercicio 01</h4>
+              <p>
+                Definición de una clase <code>Nodo</code> para representar un
+                nodo de un árbol binario, con atributos para el valor, hijo
+                izquierdo e hijo derecho.
+              </p>
+              <pre><code>class Nodo:
+  def __init__(self, valor):
+    self.valor = valor
+    self.izquierda = None
+    self.derecha = None
+
+# Ejemplo
+raiz = Nodo(10)
+raiz.izquierda = Nodo(5)
+raiz.derecha = Nodo(15)
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>7.2 Ejercicio – Recorrido en orden (inorder)</h3>
+              <h4>Ejercicio 02</h4>
+              <p>
+                Implementación de un recorrido en orden (inorder) de un árbol
+                binario. Debe imprimir los valores en orden ascendente si es un
+                BST.
+              </p>
+              <pre><code>def inorder(nodo):
+  if nodo:
+    inorder(nodo.izquierda)
+    print(nodo.valor)
+    inorder(nodo.derecha)
+
+# Ejemplo
+inorder(raiz)  # Salida: 5 10 15
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>7.3 Ejercicio – Altura del árbol</h3>
+              <h4>Ejercicio 03</h4>
+              <p>
+                Función recursiva que calcule la altura de un árbol binario.
+              </p>
+              <pre><code>def altura(nodo):
+  if nodo is None:
+    return 0
+  return 1 + max(altura(nodo.izquierda), altura(nodo.derecha))
+
+# Ejemplo
+print(altura(raiz))  # Salida: 2
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>7.4 Ejercicio – Suma de todos los nodos</h3>
+              <h4>Ejercicio 04</h4>
+              <p>
+                Función recursiva que calcule la suma de todos los valores de un
+                árbol binario.
+              </p>
+              <pre><code>def suma_nodos(nodo):
+  if nodo is None:
+    return 0
+  return nodo.valor + suma_nodos(nodo.izquierda) + suma_nodos(nodo.derecha)
+
+# Ejemplo
+print(suma_nodos(raiz))  # Salida: 30
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>7.5 Ejercicio – Buscar un valor</h3>
+              <h4>Ejercicio 05</h4>
+              <p>
+                Implementación de una función recursiva que determine si un
+                valor dado está presente en el árbol binario.
+              </p>
+              <pre><code>def buscar(nodo, objetivo):
+  if nodo is None:
+    return False
+  if nodo.valor == objetivo:
+    return True
+  return buscar(nodo.izquierda, objetivo) or buscar(nodo.derecha, objetivo)
+
+# Ejemplo
+print(buscar(raiz, 15))  # Salida: True
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>7.6 Ejercicio – Contar hojas</h3>
+              <h4>Ejercicio 06</h4>
+              <p>
+                Función recursiva que cuente el número de hojas en un árbol
+                binario.
+              </p>
+              <pre><code>def contar_hojas(nodo):
+  if nodo is None:
+    return 0
+  if nodo.izquierda is None and nodo.derecha is None:
+    return 1
+  return contar_hojas(nodo.izquierda) + contar_hojas(nodo.derecha)
+
+# Ejemplo
+print(contar_hojas(raiz))  # Salida: 2
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>7.7 Ejercicio – Recorrido por niveles (BFS)</h3>
+              <h4>Ejercicio 07</h4>
+              <p>
+                Implementación de una función que imprima el recorrido por
+                niveles (BFS) de un árbol binario.
+              </p>
+              <pre><code>from collections import deque
+
+def recorrido_por_niveles(nodo):
+  if not nodo:
+    return
+  cola = deque([nodo])
+  while cola:
+    actual = cola.popleft()
+    print(actual.valor)
+    if actual.izquierda:
+      cola.append(actual.izquierda)
+    if actual.derecha:
+      cola.append(actual.derecha)
+
+# Ejemplo
+recorrido_por_niveles(raiz)
+# Salida: 10 5 15
+</code></pre>
+            </div>
+          </div>
           <!-- Aquí puedes agregar más semanas con su respectivo contenido -->
         </section>
       </main>
