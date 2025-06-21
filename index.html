@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ChatBot Universitario</title>
     <!-- Fuente moderna desde Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -28,7 +31,10 @@
             Chatbot está escribiendo...
           </div>
         </div>
-        <form class="input-area" onsubmit="event.preventDefault(); sendMessage();">
+        <form
+          class="input-area"
+          onsubmit="event.preventDefault(); sendMessage();"
+        >
           <input
             type="text"
             id="user-input"
@@ -42,18 +48,58 @@
       <section class="examples-section">
         <h2>Ejemplos de preguntas</h2>
         <div class="examples">
-          <button onclick="insertExample('¿Puedo tomar Inteligencia Artificial?')">¿Puedo tomar Inteligencia Artificial?</button>
-          <button onclick="insertExample('Aprobé Programación I')">Aprobé Programación I</button>
-          <button onclick="insertExample('¿Qué cursos aprobé?')">¿Qué cursos aprobé?</button>
-          <button onclick="insertExample('¿Cuál es el horario de Bases de Datos?')">¿Cuál es el horario de Bases de Datos?</button>
-          <button onclick="insertExample('¿Qué días se imparte Algoritmos y Estructuras de Datos?')">¿Qué días se imparte Algoritmos y Estructuras de Datos?</button>
-          <button onclick="insertExample('Si aprobé Programación I, ¿puedo tomar Programación II?')">Si aprobé Programación I, ¿puedo tomar Programación II?</button>
-          <button onclick="insertExample('¿Qué necesito para tomar Redes de Computadoras?')">¿Qué necesito para tomar Redes de Computadoras?</button>
-          <button onclick="insertExample('Registra que pasé Matemáticas Discretas')">Registra que pasé Matemáticas Discretas</button>
-          <button onclick="insertExample('¿Cuántos créditos vale Teoría de la Computación?')">¿Cuántos créditos vale Teoría de la Computación?</button>
-          <button onclick="insertExample('¿Qué cursos puedo tomar si solo he aprobado Bases de Datos?')">¿Qué cursos puedo tomar si solo he aprobado Bases de Datos?</button>
-          <button onclick="insertExample('Evalúa si he aprobado Algoritmos y he pasado Programación II')">Evalúa si he aprobado Algoritmos y he pasado Programación II</button>
-          <button onclick="insertExample('Verifica si puedo tomar Sistemas Operativos habiendo aprobado solo Redes de Computadoras')">Verifica si puedo tomar Sistemas Operativos habiendo aprobado solo Redes de Computadoras</button>
+          <button
+            onclick="insertExample('¿Puedo tomar Inteligencia Artificial?')"
+          >
+            ¿Puedo tomar Inteligencia Artificial?
+          </button>
+          <button onclick="insertExample('Aprobé Programación I')">
+            Aprobé Programación I
+          </button>
+          <button onclick="insertExample('¿Qué cursos aprobé?')">
+            ¿Qué cursos aprobé?
+          </button>
+          <button
+            onclick="insertExample('¿Cuál es el horario de Bases de Datos?')"
+          >
+            ¿Cuál es el horario de Bases de Datos?
+          </button>
+          <button
+            onclick="insertExample('¿Qué días se imparte Algoritmos y Estructuras de Datos?')"
+          >
+            ¿Qué días se imparte Algoritmos y Estructuras de Datos?
+          </button>
+          <button
+            onclick="insertExample('¿Qué necesito para tomar Redes de Computadoras?')"
+          >
+            ¿Qué necesito para tomar Redes de Computadoras?
+          </button>
+          <button
+            onclick="insertExample('Registra que pasé Matemáticas Discretas')"
+          >
+            Registra que pasé Matemáticas Discretas
+          </button>
+          <button
+            onclick="insertExample('¿Cuántos créditos vale Teoría de la Computación?')"
+          >
+            ¿Cuántos créditos vale Teoría de la Computación?
+          </button>
+          <button
+            onclick="insertExample('¿Qué cursos puedo tomar si solo he aprobado Bases de Datos?')"
+          >
+            ¿Qué cursos puedo tomar si solo he aprobado Bases de Datos?
+          </button>
+          <button
+            onclick="insertExample('Evalúa si he aprobado Algoritmos y he pasado Programación II')"
+          >
+            Evalúa si he aprobado Algoritmos y he pasado Programación II
+          </button>
+          <button
+            onclick="insertExample('Verifica si puedo tomar Sistemas Operativos habiendo aprobado solo Redes de Computadoras')"
+          >
+            Verifica si puedo tomar Sistemas Operativos habiendo aprobado solo
+            Redes de Computadoras
+          </button>
         </div>
       </section>
     </main>
