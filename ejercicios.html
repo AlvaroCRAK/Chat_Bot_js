@@ -62,6 +62,9 @@
             <li class="week-item">
               <a href="#" class="week-link">Semana 10</a>
             </li>
+            <li class="week-item">
+              <a href="#" class="week-link">Semana 11</a>
+            </li>
             <!-- Más semanas pueden ser añadidas aquí -->
           </ul>
         </nav>
@@ -2891,6 +2894,259 @@ recorrido_por_niveles(raiz)
             </div>
           </div>
 
+          <div class="exercise-list" id="week-11-exercises">
+            <h2>Neural Networks and Deep Learning</h2>
+            <h2>Semana 11</h2>
+
+            <div class="exercise-item">
+              <h3>11.1 Ejercicio – Perceptrón simple con Keras</h3>
+              <h4>Ejercicio 01</h4>
+              <p>
+                Crear y entrenar un perceptrón simple para resolver un problema
+                lógico AND.
+              </p>
+              <pre><code>import numpy as np
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+# Datos de entrada (AND)
+X = np.array([[0,0], [0,1], [1,0], [1,1]])
+y = np.array([[0], [0], [0], [1]])
+
+# Modelo
+modelo = Sequential()
+modelo.add(Dense(1, input_dim=2, activation='sigmoid'))
+modelo.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+# Entrenamiento
+modelo.fit(X, y, epochs=500, verbose=0)
+
+# Evaluación
+print(modelo.predict(X).round())
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>11.2 Ejercicio – Clasificación de dígitos con MNIST</h3>
+              <h4>Ejercicio 02</h4>
+              <p>
+                Crear una red neuronal multicapa para clasificar imágenes del
+                dataset MNIST.
+              </p>
+              <pre><code>from tensorflow.keras.datasets import mnist
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Flatten
+from tensorflow.keras.utils import to_categorical
+
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+X_train, X_test = X_train / 255.0, X_test / 255.0
+
+y_train_cat = to_categorical(y_train)
+y_test_cat = to_categorical(y_test)
+
+modelo = Sequential([
+    Flatten(input_shape=(28,28)),
+    Dense(128, activation='relu'),
+    Dense(10, activation='softmax')
+])
+
+modelo.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+modelo.fit(X_train, y_train_cat, epochs=5, batch_size=32, validation_split=0.1)
+modelo.evaluate(X_test, y_test_cat)
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>11.3 Ejercicio – Detección de sobreajuste</h3>
+              <h4>Ejercicio 03</h4>
+              <p>
+                Entrenar una red con validación para observar el sobreajuste y
+                cómo afecta al rendimiento.
+              </p>
+              <pre><code>from tensorflow.keras.callbacks import EarlyStopping
+
+modelo = Sequential([
+    Flatten(input_shape=(28,28)),
+    Dense(512, activation='relu'),
+    Dense(10, activation='softmax')
+])
+
+modelo.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+early_stop = EarlyStopping(monitor='val_loss', patience=3)
+modelo.fit(X_train, y_train_cat, epochs=50, batch_size=32, validation_split=0.2, callbacks=[early_stop])
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>11.4 Ejercicio – Guardar y cargar modelos</h3>
+              <h4>Ejercicio 04</h4>
+              <p>
+                Guardar un modelo entrenado en disco y luego cargarlo para
+                reutilizarlo.
+              </p>
+              <pre><code># Guardar modelo
+modelo.save("modelo_mnist.h5")
+
+# Cargar modelo
+from tensorflow.keras.models import load_model
+modelo_cargado = load_model("modelo_mnist.h5")
+resultado = modelo_cargado.evaluate(X_test, y_test_cat)
+print(f"Precisión: {resultado[1]:.2f}")
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>11.5 Ejercicio – Visualizar pesos de la red</h3>
+              <h4>Ejercicio 05</h4>
+              <p>
+                Visualizar los pesos de las capas entrenadas para entender qué
+                aprende la red.
+              </p>
+              <pre><code>import matplotlib.pyplot as plt
+
+pesos, sesgos = modelo.layers[1].get_weights()
+fig, axs = plt.subplots(8, 16, figsize=(12,6))
+
+for i, ax in enumerate(axs.flat):
+    if i &lt; 128:
+        imagen = pesos[:,i].reshape(28,28)
+        ax.imshow(imagen, cmap='gray')
+        ax.axis('off')
+plt.tight_layout()
+plt.show()
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>11.6 Ejercicio – Red convolucional simple (CNN)</h3>
+              <h4>Ejercicio 06</h4>
+              <p>
+                Crear una red convolucional para mejorar la precisión en
+                imágenes.
+              </p>
+              <pre><code>from tensorflow.keras.layers import Conv2D, MaxPooling2D
+
+X_train_cnn = X_train.reshape(-1, 28, 28, 1)
+X_test_cnn = X_test.reshape(-1, 28, 28, 1)
+
+modelo = Sequential([
+    Conv2D(32, kernel_size=3, activation='relu', input_shape=(28,28,1)),
+    MaxPooling2D(pool_size=2),
+    Flatten(),
+    Dense(64, activation='relu'),
+    Dense(10, activation='softmax')
+])
+
+modelo.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+modelo.fit(X_train_cnn, y_train_cat, epochs=5, validation_split=0.1)
+modelo.evaluate(X_test_cnn, y_test_cat)
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>11.7 Ejercicio – Normalización de datos</h3>
+              <h4>Ejercicio 07</h4>
+              <p>
+                Uso de `StandardScaler` para normalizar características de
+                entrada en redes neuronales.
+              </p>
+              <pre><code>from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+X_train_flat = X_train.reshape(-1, 28*28)
+X_test_flat = X_test.reshape(-1, 28*28)
+
+X_train_scaled = scaler.fit_transform(X_train_flat)
+X_test_scaled = scaler.transform(X_test_flat)
+
+modelo = Sequential([
+    Dense(128, activation='relu', input_shape=(784,)),
+    Dense(10, activation='softmax')
+])
+
+modelo.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+modelo.fit(X_train_scaled, y_train_cat, epochs=5, validation_split=0.1)
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>11.8 Ejercicio – Red recurrente simple (RNN)</h3>
+              <h4>Ejercicio 08</h4>
+              <p>
+                Construcción de una red neuronal recurrente básica usando
+                `SimpleRNN`.
+              </p>
+              <pre><code>from tensorflow.keras.layers import SimpleRNN, Embedding
+
+# Simulación de secuencias (ejemplo didáctico)
+X_seq = np.random.randint(100, size=(1000, 10))
+y_seq = np.random.randint(2, size=(1000,))
+
+modelo = Sequential([
+    Embedding(input_dim=100, output_dim=16, input_length=10),
+    SimpleRNN(32),
+    Dense(1, activation='sigmoid')
+])
+
+modelo.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+modelo.fit(X_seq, y_seq, epochs=5)
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>11.9 Ejercicio – Transfer Learning con MobileNetV2</h3>
+              <h4>Ejercicio 09</h4>
+              <p>
+                Usar MobileNetV2 preentrenada para clasificar imágenes con
+                `transfer learning`.
+              </p>
+              <pre><code>from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.layers import GlobalAveragePooling2D
+
+base_model = MobileNetV2(weights='imagenet', include_top=False, input_shape=(96,96,3))
+base_model.trainable = False
+
+modelo = Sequential([
+    base_model,
+    GlobalAveragePooling2D(),
+    Dense(1, activation='sigmoid')
+])
+
+modelo.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Cargar imágenes (solo si tienes datasets preparados)
+# datagen = ImageDataGenerator(preprocessing_function=preprocess_input)
+# train_data = datagen.flow_from_directory('ruta/train', target_size=(96,96), batch_size=32, class_mode='binary')
+# modelo.fit(train_data, epochs=5)
+</code></pre>
+            </div>
+
+            <div class="exercise-item">
+              <h3>
+                11.10 Ejercicio – Exportar modelo a formato TensorFlow Lite
+              </h3>
+              <h4>Ejercicio 10</h4>
+              <p>
+                Convertir un modelo entrenado a formato `.tflite` para su uso en
+                dispositivos móviles.
+              </p>
+              <pre><code>import tensorflow as tf
+
+modelo = tf.keras.models.load_model("modelo_mnist.h5")
+
+# Conversión
+conversor = tf.lite.TFLiteConverter.from_keras_model(modelo)
+modelo_tflite = conversor.convert()
+
+# Guardar archivo
+with open("modelo_mnist.tflite", "wb") as f:
+    f.write(modelo_tflite)
+</code></pre>
+            </div>
+          </div>
           <!-- Aquí puedes agregar más semanas con su respectivo contenido -->
         </section>
       </main>
