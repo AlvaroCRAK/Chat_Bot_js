@@ -59,6 +59,9 @@
             <li class="week-item">
               <a href="#" class="week-link">Semana 9</a>
             </li>
+            <li class="week-item">
+              <a href="#" class="week-link">Semana 10</a>
+            </li>
             <!-- Más semanas pueden ser añadidas aquí -->
           </ul>
         </nav>
@@ -2452,7 +2455,6 @@ print(suma_nodos(raiz))  # Salida: 30
 print(buscar(raiz, 15))  # Salida: True
 </code></pre>
             </div>
-
             <div class="exercise-item">
               <h3>7.6 Ejercicio – Contar hojas</h3>
               <h4>Ejercicio 06</h4>
@@ -2499,6 +2501,163 @@ recorrido_por_niveles(raiz)
 </code></pre>
             </div>
           </div>
+          <div class="exercise-list" id="week-10-exercises">
+            <h2>Máquinas de Estado Finito</h2>
+            <h2>Semana 10</h2>
+
+            <!-- Ejercicio 10.1 -->
+            <div class="exercise-item">
+              <h3>10.1 Ejercicio – Máquina de estado finito</h3>
+              <h4>Ejercicio 01</h4>
+              <p>
+                Muestre que la máquina de estado finito donde
+                <strong>T</strong> es la función dada por la siguiente tabla de
+                transiciones:
+              </p>
+
+              <figure>
+                <table class="matrix">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>a</th>
+                      <th>b</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>q0</th>
+                      <td>q0</td>
+                      <td>q1</td>
+                    </tr>
+                    <tr>
+                      <th>q1</th>
+                      <td>q0</td>
+                      <td>q2</td>
+                    </tr>
+                    <tr>
+                      <th>q2</th>
+                      <td>q2</td>
+                      <td>q2</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <figcaption class="matrix-caption">
+                  Tabla de transición de estados
+                </figcaption>
+              </figure>
+
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>La gráfica de la máquina es la siguiente:</p>
+                <div style="text-align: center">
+                  <img
+                    src="assets/img/me1.png"
+                    alt="Gráfico de la máquina de estados"
+                    style="width: 60%; max-width: 400px; height: auto"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Ejercicio 10.2 -->
+            <div class="exercise-item">
+              <h3>10.2 Ejercicio – Máquina de estado finito</h3>
+              <h4>Ejercicio 02</h4>
+              <p>
+                Teniendo tablas de transición de estados y de salida, realice el
+                diagrama de transiciones.
+              </p>
+
+              <div
+                style="
+                  display: flex;
+                  gap: 2rem;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                "
+              >
+                <!-- Tabla de transición (F) -->
+                <figure>
+                  <table class="matrix">
+                    <thead>
+                      <tr>
+                        <th>Estado</th>
+                        <th>a</th>
+                        <th>b</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>e₀</th>
+                        <td>e₁</td>
+                        <td>e₀</td>
+                      </tr>
+                      <tr>
+                        <th>e₁</th>
+                        <td>e₂</td>
+                        <td>e₀</td>
+                      </tr>
+                      <tr>
+                        <th>e₂</th>
+                        <td>e₂</td>
+                        <td>e₀</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">
+                    Función de transición <strong>F</strong>
+                  </figcaption>
+                </figure>
+
+                <!-- Tabla de salida (g) -->
+                <figure>
+                  <table class="matrix">
+                    <thead>
+                      <tr>
+                        <th>Estado</th>
+                        <th>a</th>
+                        <th>b</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>e₀</th>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <th>e₁</th>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <th>e₂</th>
+                        <td>1</td>
+                        <td>0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <figcaption class="matrix-caption">
+                    Función de salida <strong>g</strong>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="solution">
+                <h5>Solución:</h5>
+                <p>La gráfica de la máquina es la siguiente:</p>
+                <div style="text-align: center">
+                  <img
+                    src="assets/img/me1.png"
+                    alt="Gráfico de la máquina de estados"
+                    style="width: 60%; max-width: 400px; height: auto"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Aquí puedes agregar más semanas con su respectivo contenido -->
         </section>
       </main>
